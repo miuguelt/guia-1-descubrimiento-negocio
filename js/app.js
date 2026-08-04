@@ -139,11 +139,31 @@
     updateQuizProgress();
   }
 
+  function setupExerciseValidation() {
+    const btnEx1 = document.querySelector("#btn-validate-ex1");
+    const feedbackEx1 = document.querySelector("#feedback-ex1");
+    if (!btnEx1 || !feedbackEx1) return;
+
+    btnEx1.addEventListener("click", () => {
+      const selected = [...document.querySelectorAll(".ex1-check:checked")].map((el) => el.value);
+      const isCorrect = selected.length === 3 && selected.includes("q1") && selected.includes("q3") && selected.includes("q4");
+
+      if (isCorrect) {
+        feedbackEx1.className = "exercise-feedback is-success";
+        feedbackEx1.textContent = "¡Excelente! Has seleccionado las 3 preguntas abiertas clave (excepciones, cuellos de botella y autoridad). La opción q2 es una pregunta cerrada/inducida que debes evitar en una entrevista.";
+      } else {
+        feedbackEx1.className = "exercise-feedback is-error";
+        feedbackEx1.textContent = "Selecciona exactamente 3 opciones. Pista: busca preguntas abiertas que exploren excepciones, cuellos de botella y niveles de autorización.";
+      }
+    });
+  }
+
   function initApp() {
     setupMobileMenu();
     setupActiveNavigation();
     setupSimulatorProgress();
     setupQuiz();
+    setupExerciseValidation();
   }
 
   if (document.readyState === "loading") {

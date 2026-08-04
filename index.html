@@ -167,6 +167,173 @@
             </article>
           </div>
 
+          <div class="techniques-container" style="margin-top: 48px; margin-bottom: 48px;">
+            <div class="section-heading compact-heading">
+              <div>
+                <p class="eyebrow"><span class="eyebrow-dot"></span> Insumos para la Competencia</p>
+                <h2 id="techniques-title">Técnicas de Recolección de Información</h2>
+              </div>
+              <p>Para levantar requisitos reales sin asumir, el analista ADSO aplica 5 técnicas fundamentales con sus respectivos ejercicios prácticos.</p>
+            </div>
+
+            <div class="techniques-grid">
+              <!-- Técnica 1 -->
+              <article class="technique-card">
+                <div class="technique-header">
+                  <span class="technique-badge">01 · Cualitativa</span>
+                  <h3>Entrevista Semiestructurada</h3>
+                </div>
+                <p class="technique-desc">Diálogo profundo y guiado con actores clave (vigilantes, administradores, usuarios) para explorar expectativas, excepciones y dolores del proceso actual.</p>
+                <div class="technique-meta">
+                  <span><strong>Instrumento:</strong> Guion de preguntas abiertas</span>
+                  <span><strong>Entregable:</strong> Transcripción de hallazgos y necesidades</span>
+                </div>
+                <details class="exercise-box">
+                  <summary>⚡ Ejercicio Práctico 1: Roleplay de Entrevista al Guarda de Seguridad</summary>
+                  <div class="exercise-content">
+                    <p><strong>Escenario:</strong> Entrevistas a Don José, guarda del acceso principal del Centro Agroempresarial, para entender cómo valida el ingreso de computadores de visitantes.</p>
+                    <div class="exercise-task">
+                      <p><strong>Paso 1:</strong> Selecciona de la siguiente lista las 3 preguntas abiertas más efectivas para descubrir excepciones y reglas no escritas:</p>
+                      <div class="exercise-options">
+                        <label class="exercise-opt"><input type="checkbox" class="ex1-check" value="q1" /> <span>¿Qué sucede exactamente cuando un visitante trae un portátil sin autorización escrita previa?</span></label>
+                        <label class="exercise-opt"><input type="checkbox" class="ex1-check" value="q2" /> <span>¿El software actual en Excel le parece rápido o lento?</span></label>
+                        <label class="exercise-opt"><input type="checkbox" class="ex1-check" value="q3" /> <span>En las horas pico de ingreso (7:00 AM), ¿cuáles son las mayores dificultades que enfrenta en la garita?</span></label>
+                        <label class="exercise-opt"><input type="checkbox" class="ex1-check" value="q4" /> <span>¿Quién autoriza una excepción cuando la persona no aparece registrada en la planilla del día?</span></label>
+                      </div>
+                      <button type="button" class="button button-small button-ghost check-ex-btn" id="btn-validate-ex1">Verificar Selección</button>
+                      <div class="exercise-feedback" id="feedback-ex1" aria-live="polite"></div>
+                    </div>
+                  </div>
+                </details>
+              </article>
+
+              <!-- Técnica 2 -->
+              <article class="technique-card">
+                <div class="technique-header">
+                  <span class="technique-badge">02 · Cuantitativa</span>
+                  <h3>Encuesta y Cuestionario Masivo</h3>
+                </div>
+                <p class="technique-desc">Instrumento estructurado aplicado a un volumen amplio de personas para medir frecuencias, volúmenes de dispositivos y patrones comunes de uso.</p>
+                <div class="technique-meta">
+                  <span><strong>Instrumento:</strong> Formulario cerrado con escala Likert</span>
+                  <span><strong>Entregable:</strong> Reporte de tendencias e indicadores</span>
+                </div>
+                <details class="exercise-box">
+                  <summary>⚡ Ejercicio Práctico 2: Cuestionario de Frecuencia para Visitantes</summary>
+                  <div class="exercise-content">
+                    <p><strong>Escenario:</strong> Diseñas un cuestionario masivo para 200 visitantes e instructores del centro de formación.</p>
+                    <div class="exercise-task">
+                      <p><strong>Estructura del Instrumento Recomendado:</strong></p>
+                      <div class="matching-box">
+                        <div class="matching-item"><strong>1. Frecuencia de ingreso:</strong> Pregunta de opción única ordinal (<em>Diario / Semanal / Mensual / Ocasional</em>).</div>
+                        <div class="matching-item"><strong>2. Tipo de equipo ingresado:</strong> Selección múltiple con casilla (<em>Portátil / Herramienta / Cámara / Otro</em>).</div>
+                        <div class="matching-item"><strong>3. Nivel de satisfacción:</strong> Escala Likert de 5 puntos (<em>1 - Muy Ineficiente a 5 - Muy Eficiente</em>).</div>
+                      </div>
+                      <p class="exercise-tip">💡 <em>Tip ADSO:</em> Las encuestas masivas deben tomar menos de 3 minutos para asegurar un porcentaje de respuesta superior al 70%.</p>
+                    </div>
+                  </div>
+                </details>
+              </article>
+
+              <!-- Técnica 3 -->
+              <article class="technique-card">
+                <div class="technique-header">
+                  <span class="technique-badge">03 · Trabajo de Campo</span>
+                  <h3>Observación Directa (Job Shadowing)</h3>
+                </div>
+                <p class="technique-desc">Presencia física en el lugar de los hechos (Gemba Walk) para documentar el comportamiento real del proceso, tiempos de ciclo y pasos informales.</p>
+                <div class="technique-meta">
+                  <span><strong>Instrumento:</strong> Ficha de campo con cronometraje</span>
+                  <span><strong>Entregable:</strong> Diagrama de flujo real AS-IS y cuellos de botella</span>
+                </div>
+                <details class="exercise-box">
+                  <summary>⚡ Ejercicio Práctico 3: Ficha de Observación en Garita de Acceso</summary>
+                  <div class="exercise-content">
+                    <p><strong>Escenario:</strong> Observas durante 30 minutos el proceso de registro manual en la garita de control.</p>
+                    <div class="exercise-task">
+                      <p><strong>Registro de Campo Observado:</strong></p>
+                      <table class="mini-obs-table" role="table">
+                        <thead>
+                          <tr><th>Paso Observado</th><th>Tiempo Medido</th><th>Hallazgo de Campo</th></tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>1. Presentación de documento y equipo</td><td>45 seg</td><td>El visitante debe dictar el serial verbalmente al guarda.</td></tr>
+                          <tr><td>2. Búsqueda en minuta física de papel</td><td>2 min 10 seg</td><td>Hoja arrugada; dificultad para ubicar casillas vacías.</td></tr>
+                          <tr><td>3. Diligenciamiento de ficha y firma</td><td>1 min 15 seg</td><td>Genera filas de 5 personas en horas pico (7:00 AM).</td></tr>
+                        </tbody>
+                      </table>
+                      <div class="insight-box">
+                        <strong>📌 Insumo Obtenido:</strong> El tiempo de registro manual actual es de <strong>4 minutos por persona</strong>. El nuevo software debe reducir este paso a menos de 30 segundos.
+                      </div>
+                    </div>
+                  </div>
+                </details>
+              </article>
+
+              <!-- Técnica 4 -->
+              <article class="technique-card">
+                <div class="technique-header">
+                  <span class="technique-badge">04 · Análisis Documental</span>
+                  <h3>Revisión de Artefactos y Formatos</h3>
+                </div>
+                <p class="technique-desc">Inspección detallada de minutas físicas, carpetas Excel, normativas internas, comprobantes y reportes existentes en la entidad.</p>
+                <div class="technique-meta">
+                  <span><strong>Instrumento:</strong> Matriz de campos y reglas de negocio</span>
+                  <span><strong>Entregable:</strong> Diccionario de datos inicial para la BD</span>
+                </div>
+                <details class="exercise-box">
+                  <summary>⚡ Ejercicio Práctico 4: Auditoría de Minuta Física vs. Requisitos Digitales</summary>
+                  <div class="exercise-content">
+                    <p><strong>Escenario:</strong> Auditoría al libro físico de registro en papel utilizado actualmente.</p>
+                    <div class="exercise-task">
+                      <p><strong>Campos presentes en el libro impreso:</strong> <code>[Fecha] [Hora] [Nombre Visitante] [Cédula] [Marca Equipo] [Serial] [Firma]</code></p>
+                      <p><strong>3 Vacíos Críticos Identificados para el Desarrollo de Software:</strong></p>
+                      <ul class="exercise-bullet-list">
+                        <li><strong>Ausencia de Correo/Teléfono:</strong> Imposibilita el envío automatizado del comprobante de ingreso.</li>
+                        <li><strong>Falta de Estado Físico del Equipo:</strong> Ocasiona reclamos por rayones o daños previos no registrados.</li>
+                        <li><strong>Sin Identificador del Funcionario Solicitante:</strong> No hay trazabilidad de quién autorizó la entrada.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </details>
+              </article>
+
+              <!-- Técnica 5 -->
+              <article class="technique-card">
+                <div class="technique-header">
+                  <span class="technique-badge">05 · Colaborativa</span>
+                  <h3>Taller de Trabajo (Mesa JAD - Joint Application Development)</h3>
+                </div>
+                <p class="technique-desc">Reunión facilitada entre representantes de diferentes áreas (Seguridad, Instructores, Directivos, TI) para conciliar visiones contrapuestas y acordar reglas.</p>
+                <div class="technique-meta">
+                  <span><strong>Instrumento:</strong> Matriz de Puntos de Dolor y Consensos</span>
+                  <span><strong>Entregable:</strong> Lista consolidada de alcance y restricciones</span>
+                </div>
+                <details class="exercise-box">
+                  <summary>⚡ Ejercicio Práctico 5: Matriz de Consenso entre Seguridad y Operaciones</summary>
+                  <div class="exercise-content">
+                    <p><strong>Escenario:</strong> Conflicto de expectativas durante el taller JAD multipapel.</p>
+                    <div class="exercise-task">
+                      <div class="consensus-grid">
+                        <div class="consensus-col">
+                          <span class="consensus-role">Seguridad Exige:</span>
+                          <p>Verificación minuciosa del serial y foto obligatoria para evitar hurtos.</p>
+                        </div>
+                        <div class="consensus-col">
+                          <span class="consensus-role">Instructores Exigen:</span>
+                          <p>Ingreso ágil en menos de 10 segundos para iniciar clase a tiempo.</p>
+                        </div>
+                      </div>
+                      <div class="consensus-outcome">
+                        <strong>🤝 Acuerdos de Consenso Logrado:</strong> Pre-registro digital previo con Código QR dinámico para usuarios frecuentes (ingreso en 5 seg) y foto obligatoria únicamente para el registro por primera vez.
+                      </div>
+                    </div>
+                  </div>
+                </details>
+              </article>
+            </div>
+          </div>
+
           <div class="discovery-canvas" aria-labelledby="canvas-title">
             <div class="canvas-copy">
               <p class="eyebrow">Herramienta de campo</p>
@@ -401,10 +568,54 @@
       </section>
 
       <section class="completion-section" id="cierre" aria-labelledby="completion-title">
-        <div class="container completion-card">
-          <div class="completion-icon" aria-hidden="true">✦</div>
-          <div><p class="eyebrow">Tu siguiente paso</p><h2 id="completion-title">Lleva el mapa a una conversación real</h2><p>Elige un proceso cotidiano de tu entorno, conversa con una persona involucrada y construye tu propia matriz SIPOC.</p></div>
-          <a class="button button-secondary" href="#inicio">Volver al inicio <span aria-hidden="true">↑</span></a>
+        <div class="container completion-card" style="display: flex; flex-direction: column; align-items: flex-start; text-align: left;">
+          <div class="completion-icon" aria-hidden="true" style="margin-bottom: 1rem;">✦</div>
+          <div style="width: 100%;">
+            <p class="eyebrow">Formación SENA por Proyectos</p>
+            <h2 id="completion-title">Producto Entregable del Proyecto Formativo</h2>
+            <p style="margin-bottom: 1.5rem; color: var(--text-secondary, #475569); line-height: 1.6;">
+              En el SENA la formación se fundamenta en el <strong>Aprendizaje Basado en Proyectos (ABP)</strong>. A través del recorrido realizado en esta guía web (desde los conceptos de caracterización de procesos hasta la resolución interactiva del simulador SIPOC), has obtenido los insumos requeridos para estructurar el producto tangible de la primera fase de tu <strong>Proyecto Formativo Core</strong>.
+            </p>
+            
+            <div style="background-color: var(--surface-alt, #f8f9fa); padding: 1.75rem; border-radius: 8px; border: 1px solid var(--border-color, #e2e8f0); margin-bottom: 1.5rem; width: 100%;">
+              <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                <span style="font-size: 1.25rem;">🛠️</span>
+                <h3 style="margin: 0; font-size: 1.15rem; color: var(--text-primary, #1e293b);">Insumos Logrados en el Recorrido Web</h3>
+              </div>
+              <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; color: var(--text-secondary, #475569); line-height: 1.6;">
+                <li><strong>Estación 1 (Conceptos):</strong> Identificación de actores, eventos iniciales, transformaciones y resultados.</li>
+                <li><strong>Estación 2 (Anatomía del Proceso):</strong> Caracterización del caso de estudio y matriz de observación.</li>
+                <li><strong>Estación 3 (Simulador Interactivo):</strong> Ubicación correcta de tarjetas en los 5 componentes SIPOC (5/5).</li>
+                <li><strong>Estación 4 (Autoevaluación):</strong> Verificación de conceptos clave de análisis del negocio.</li>
+              </ul>
+
+              <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                <span style="font-size: 1.25rem;">📦</span>
+                <h3 style="margin: 0; font-size: 1.15rem; color: var(--text-primary, #1e293b);">Estructura del Producto a Entregar (Documento PDF)</h3>
+              </div>
+              <p style="margin-bottom: 0.5rem; color: var(--text-secondary, #475569);">Consolida un documento PDF institucional con los siguientes apartados de tu Proyecto Formativo:</p>
+              <ol style="margin-left: 1.5rem; margin-bottom: 1.5rem; color: var(--text-secondary, #475569); line-height: 1.6;">
+                <li style="margin-bottom: 0.35rem;"><strong>Portada Institucional SENA:</strong> Nombre del Proyecto Formativo, Nombres de los Aprendices, Ficha y Centro de Formación.</li>
+                <li style="margin-bottom: 0.35rem;"><strong>Caracterización del Proceso:</strong> Nombre, objetivo y alcance del proceso clave de software estudiado.</li>
+                <li style="margin-bottom: 0.35rem;"><strong>Matriz SIPOC Integrada:</strong> Tabla detallada de Proveedores (Supplier), Entradas (Input), Subprocesos/Pasos (Process), Salidas (Output) y Clientes (Customer).</li>
+                <li style="margin-bottom: 0.35rem;"><strong>Evidencia del Recorrido Web:</strong> Captura de pantalla legible del Simulador SIPOC completado exitosamente (5/5) y resultado del Cuestionario de comprobación.</li>
+                <li style="margin-bottom: 0.35rem;"><strong>Conclusiones de Modelado:</strong> Breve análisis sobre cómo esta caracterización previene ambigüedades antes de iniciar la especificación técnica.</li>
+              </ol>
+              
+              <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                <span style="font-size: 1.25rem;">📤</span>
+                <h3 style="margin: 0; font-size: 1.15rem; color: var(--text-primary, #1e293b);">Protocolo y Nomenclatura de Entrega SENA</h3>
+              </div>
+              <p style="color: var(--text-secondary, #475569); margin-bottom: 0.5rem;">
+                Sube tu archivo PDF a la plataforma LMS (Zajuna / Territorium) en la actividad correspondiente a:<br>
+                <strong style="color: var(--text-primary, #1e293b);">Evidencia: GA1-220501093-AA1-EV01 — Caracterización de procesos de software con matriz SIPOC</strong>
+              </p>
+              <p style="font-size: 0.9rem; color: var(--text-secondary, #64748b); margin: 0;">
+                Nomenclatura recomendada del archivo: <code>GA1-220501093-AA1-EV01_PrimerNombre_PrimerApellido.pdf</code>
+              </p>
+            </div>
+          </div>
+          <a class="button button-secondary" href="#inicio" style="align-self: flex-start;">Volver al inicio <span aria-hidden="true">↑</span></a>
         </div>
         <div class="container glossary-block" aria-labelledby="glossary-title">
           <div class="glossary-heading"><p class="eyebrow">Para llevar contigo</p><h2 id="glossary-title">Mini glosario ADSO</h2></div>
