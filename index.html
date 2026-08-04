@@ -167,6 +167,103 @@
             </article>
           </div>
 
+          <!-- Módulo Maestro: Marco Metodológico de Recolección e Elicitación de Información -->
+          <div class="elicit-framework-block" style="margin-top: 40px; margin-bottom: 40px; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 12px; padding: 28px;">
+            <div class="section-heading compact-heading" style="margin-bottom: 24px;">
+              <div>
+                <p class="eyebrow" style="color: #38bdf8;"><span class="eyebrow-dot"></span> Metodología de Análisis de Sistemas</p>
+                <h3 style="font-size: 1.35rem; font-weight: 700; color: #f8fafc;">Dominio de la Recolección e Elicitación de Información</h3>
+              </div>
+              <p style="color: #cbd5e1; font-size: 0.875rem;">Para desarrollar software que resuelva problemas reales, el analista ADSO debe dominar el proceso de descubrir, capturar y validar la información del dominio sin asumir.</p>
+            </div>
+
+            <!-- Las 4 Fases de la Recolección de Información -->
+            <div style="margin-bottom: 28px;">
+              <h4 style="color: #93c5fd; font-size: 0.95rem; font-weight: 700; margin-bottom: 14px;">Las 4 Fases del Ciclo de Recolección de Información:</h4>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px;">
+                <div style="background: rgba(30, 41, 59, 0.8); border: 1px solid #334155; border-radius: 8px; padding: 14px;">
+                  <span style="color: #38bdf8; font-weight: 800; font-size: 0.8rem;">FASE 1</span>
+                  <h5 style="color: #f8fafc; font-size: 0.9rem; margin-top: 4px; margin-bottom: 6px;">1. Planificación y Alcance</h5>
+                  <p style="color: #94a3b8; font-size: 0.775rem; margin: 0;">Identificar a los interesados (stakeholders), definir objetivos del estudio y seleccionar la técnica adecuada.</p>
+                </div>
+                <div style="background: rgba(30, 41, 59, 0.8); border: 1px solid #334155; border-radius: 8px; padding: 14px;">
+                  <span style="color: #38bdf8; font-weight: 800; font-size: 0.8rem;">FASE 2</span>
+                  <h5 style="color: #f8fafc; font-size: 0.9rem; margin-top: 4px; margin-bottom: 6px;">2. Diseño de Instrumentos</h5>
+                  <p style="color: #94a3b8; font-size: 0.775rem; margin: 0;">Construir guiones de entrevista no sesgados, encuestas masivas válidas o fichas de campo de observación.</p>
+                </div>
+                <div style="background: rgba(30, 41, 59, 0.8); border: 1px solid #334155; border-radius: 8px; padding: 14px;">
+                  <span style="color: #38bdf8; font-weight: 800; font-size: 0.8rem;">FASE 3</span>
+                  <h5 style="color: #f8fafc; font-size: 0.9rem; margin-top: 4px; margin-bottom: 6px;">3. Ejecución y Captura</h5>
+                  <p style="color: #94a3b8; font-size: 0.775rem; margin: 0;">Interactuar con los usuarios en su entorno (Gemba), tomar notas, auditar documentos y realizar talleres.</p>
+                </div>
+                <div style="background: rgba(30, 41, 59, 0.8); border: 1px solid #334155; border-radius: 8px; padding: 14px;">
+                  <span style="color: #4ade80; font-weight: 800; font-size: 0.8rem;">FASE 4</span>
+                  <h5 style="color: #f8fafc; font-size: 0.9rem; margin-top: 4px; margin-bottom: 6px;">4. Triangulación y Validación</h5>
+                  <p style="color: #94a3b8; font-size: 0.775rem; margin: 0;">Cruzar lo que se <em>dice</em> (Entrevista), se <em>hace</em> (Observación) y se <em>documenta</em> (Minuta) para extraer el Requisito.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Matriz de Selección de Técnica -->
+            <div style="background: rgba(15, 23, 42, 0.9); border-radius: 8px; padding: 18px; margin-bottom: 24px;">
+              <h4 style="color: #f8fafc; font-size: 0.95rem; font-weight: 700; margin-bottom: 10px;">Matriz de Selección de Técnica de Recolección</h4>
+              <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; font-size: 0.8rem; color: #e2e8f0; text-align: left;">
+                  <thead>
+                    <tr style="border-bottom: 1px solid #475569; background: rgba(30, 41, 59, 0.8);">
+                      <th style="padding: 8px; color: #38bdf8;">Escenario de Análisis</th>
+                      <th style="padding: 8px; color: #cbd5e1;">Técnica Recomendada</th>
+                      <th style="padding: 8px; color: #cbd5e1;">Tipo de Fuente</th>
+                      <th style="padding: 8px; color: #4ade80;">Ventaja Principal</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr style="border-bottom: 1px solid #334155;">
+                      <td style="padding: 8px;">Pocos usuarios expertos con conocimiento profundo o procesos con excepciones complejas.</td>
+                      <td style="padding: 8px; font-weight: 700; color: #93c5fd;">Entrevista Semiestructurada</td>
+                      <td style="padding: 8px;">Primaria / Cualitativa</td>
+                      <td style="padding: 8px;">Explora el "por qué" y revela reglas de negocio no escritas.</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #334155;">
+                      <td style="padding: 8px;">Gran volumen de usuarios (más de 30 personas) para medir frecuencias y niveles de satisfacción.</td>
+                      <td style="padding: 8px; font-weight: 700; color: #93c5fd;">Encuesta / Cuestionario Masivo</td>
+                      <td style="padding: 8px;">Primaria / Cuantitativa</td>
+                      <td style="padding: 8px;">Genera estadísticas objetivas e indicadores rápidos.</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #334155;">
+                      <td style="padding: 8px;">Contradicción entre lo que dicen las personas y los tiempos reales o cuellos de botella en operación.</td>
+                      <td style="padding: 8px; font-weight: 700; color: #93c5fd;">Observación Directa (Job Shadowing)</td>
+                      <td style="padding: 8px;">De Campo / Comportamental</td>
+                      <td style="padding: 8px;">Mide tiempos de ciclo reales y descubre atajos u omisiones.</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #334155;">
+                      <td style="padding: 8px;">Existe papelería física, minutas de control, archivos Excel históricos o normativas escritas.</td>
+                      <td style="padding: 8px; font-weight: 700; color: #93c5fd;">Análisis Documental</td>
+                      <td style="padding: 8px;">Secundaria / Documental</td>
+                      <td style="padding: 8px;">Suministra los campos reales y la estructura de datos obligatorios.</td>
+                    </tr>
+                    <tr>
+                      <td style="padding: 8px;">Intereses o requisitos contrapuestos entre diferentes departamentos o áreas.</td>
+                      <td style="padding: 8px; font-weight: 700; color: #93c5fd;">Taller de Trabajo JAD</td>
+                      <td style="padding: 8px;">Colaborativa / Multicriterio</td>
+                      <td style="padding: 8px;">Logra consenso directo y aprueba el alcance del proyecto.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Triangulación de Información -->
+            <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 16px;">
+              <h4 style="color: #34d399; font-size: 0.9rem; font-weight: 700; margin-bottom: 6px;">💡 El Secreto del Buen Analista: Triangulación de Información</h4>
+              <p style="color: #cbd5e1; font-size: 0.8rem; margin: 0;">
+                Un error común del programador novato es confiar ciegamente en una sola fuente. El analista profesional <strong>triangula</strong>:
+                compara la <em>Entrevista</em> (lo que afirman que hacen), la <em>Observación</em> (lo que realmente hacen en la práctica) y el <em>Análisis Documental</em> (lo que está registrado).
+                Solo cuando las 3 fuentes coinciden o se concilian, se redacta el Requisito Funcional definitivo.
+              </p>
+            </div>
+          </div>
+
           <div class="techniques-container" style="margin-top: 48px; margin-bottom: 48px;">
             <div class="section-heading compact-heading">
               <div>
@@ -331,6 +428,56 @@
                   </div>
                 </details>
               </article>
+            </div>
+          </div>
+
+          <!-- Matriz de Transformación: De la Técnica al Requisito Funcional -->
+          <div class="transformation-section" style="margin-top: 40px; margin-bottom: 48px; background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(59, 130, 246, 0.2); border-radius: 12px; padding: 24px;">
+            <div class="section-heading compact-heading" style="margin-bottom: 20px;">
+              <div>
+                <p class="eyebrow" style="color: #60a5fa;"><span class="eyebrow-dot"></span> Puente entre Análisis y Código</p>
+                <h3 style="font-size: 1.25rem; font-weight: 700; color: #f8fafc;">Del Hallazgo al Requisito Funcional (RF)</h3>
+              </div>
+              <p style="color: #94a3b8; font-size: 0.875rem;">Para programar un sistema, el analista traduce lo descubierto con cada técnica en enunciados funcionales precisos (RF).</p>
+            </div>
+
+            <div style="overflow-x: auto;">
+              <table style="width: 100%; border-collapse: collapse; font-size: 0.875rem; color: #e2e8f0; text-align: left;">
+                <thead>
+                  <tr style="background: rgba(30, 41, 59, 0.8); border-bottom: 2px solid #334155;">
+                    <th style="padding: 10px 12px; color: #38bdf8;">Técnica Aplicada</th>
+                    <th style="padding: 10px 12px; color: #f1f5f9;">Hallazgo Recolectado en el Dominio</th>
+                    <th style="padding: 10px 12px; color: #4ade80;">Requerimiento Funcional (RF) Extraído</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-bottom: 1px solid #334155;">
+                    <td style="padding: 10px 12px; font-weight: 600; color: #93c5fd;">01. Entrevista Semiestructurada</td>
+                    <td style="padding: 10px 12px; color: #cbd5e1;">"Don José indica que cuando llega alguien sin cita previa, debe llamar por teléfono al instructor para que autorice el ingreso."</td>
+                    <td style="padding: 10px 12px; color: #86efac;"><strong>RF-01:</strong> El sistema debe permitir al guarda enviar una notificación de autorización express en tiempo real al teléfono del instructor solicitante.</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid #334155;">
+                    <td style="padding: 10px 12px; font-weight: 600; color: #93c5fd;">02. Encuesta / Cuestionario</td>
+                    <td style="padding: 10px 12px; color: #cbd5e1;">"El 85% de los aprendices ingresa con más de un equipo tecnológico (portátil + tablet + herramientas)."</td>
+                    <td style="padding: 10px 12px; color: #86efac;"><strong>RF-02:</strong> El sistema debe permitir registrar múltiples dispositivos serializados asociados a una misma persona en un único registro de ingreso.</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid #334155;">
+                    <td style="padding: 10px 12px; font-weight: 600; color: #93c5fd;">03. Observación Directa</td>
+                    <td style="padding: 10px 12px; color: #cbd5e1;">"Dictar el serial de 15 dígitos genera cuellos de botella de hasta 4 minutos por visitante a las 7:00 AM."</td>
+                    <td style="padding: 10px 12px; color: #86efac;"><strong>RF-03:</strong> El sistema debe incorporar escaneo de Código QR dinámico o código de barras para validar la identidad y seriales en menos de 5 segundos.</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid #334155;">
+                    <td style="padding: 10px 12px; font-weight: 600; color: #93c5fd;">04. Análisis Documental</td>
+                    <td style="padding: 10px 12px; color: #cbd5e1;">"La planilla en papel incluye campos obligatorios: Fecha, Hora, Nombres, Cédula, Serial del Equipo y Firma."</td>
+                    <td style="padding: 10px 12px; color: #86efac;"><strong>RF-04:</strong> El sistema debe validar que los campos de identificación personal y serial sean obligatorios antes de permitir guardar el registro.</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 10px 12px; font-weight: 600; color: #93c5fd;">05. Taller JAD (Consenso)</td>
+                    <td style="padding: 10px 12px; color: #cbd5e1;">"Seguridad requiere foto del visitante, pero Instructores requieren rapidez. Acordaron foto sólo en la primera visita."</td>
+                    <td style="padding: 10px 12px; color: #86efac;"><strong>RF-05:</strong> El sistema debe solicitar captura fotográfica por cámara únicamente cuando el usuario no registre historial previo en la base de datos.</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
 
@@ -624,7 +771,16 @@
             <details class="glossary-item"><summary>Requisito</summary><p>Necesidad o condición que el software debe satisfacer para aportar valor.</p></details>
             <details class="glossary-item"><summary>Actor</summary><p>Persona, área o sistema que participa, entrega información o recibe resultados.</p></details>
             <details class="glossary-item"><summary>SIPOC</summary><p>Herramienta de alto nivel para identificar Supplier, Input, Process, Output y Customer.</p></details>
+        </div>
+
+        <!-- Ruta Pedagógica ADSO: Navegación a la Siguiente Guía -->
+        <div class="container guide-nav-banner" style="margin-top: 36px; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 12px; padding: 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+          <div>
+            <span style="color: #60a5fa; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Siguiente Estación en tu Ruta Formativa ADSO</span>
+            <h4 style="color: #f8fafc; font-size: 1.1rem; margin-top: 2px; margin-bottom: 4px;">Guía 2 · Ingeniería de Contexto (Requisitos Funcionales y Arquitectura)</h4>
+            <p style="color: #cbd5e1; font-size: 0.825rem; margin: 0;">Transforma los hallazgos de recolección en Requisitos Funcionales (RF), priorización MoSCoW y pruebas BDD.</p>
           </div>
+          <a class="button button-primary" href="../guia%202%20Ingenier%C3%ADa%20de%20Contexto%20%28Requisitos%20Funcionales%20y%20Arquitectura%29/index.html" style="white-space: nowrap; text-decoration: none;">Avanzar a Guía 2 <span aria-hidden="true">→</span></a>
         </div>
       </section>
     </main>
