@@ -8,9 +8,11 @@
       content="Guía web interactiva para aprendices ADSO sobre descubrimiento del negocio y modelado de procesos con SIPOC."
     />
     <title>Guía 1 | Modelado de procesos con SIPOC</title>
-    <link rel="stylesheet" href="css/styles.css" />
-    <script src="js/simulator.js" defer></script>
-    <script src="js/app.js" defer></script>
+    <!-- El sufijo ?v= evita que el navegador sirva versiones antiguas en caché.
+         Súbelo cada vez que cambies el CSS o el simulador. -->
+    <link rel="stylesheet" href="css/styles.css?v=2" />
+    <script src="js/simulator.js?v=2" defer></script>
+    <script src="js/app.js?v=2" defer></script>
   </head>
 
   <body>
@@ -605,7 +607,7 @@
               <p class="eyebrow">02 · Manos a la obra</p>
               <h2 id="simulator-title">Construye la matriz SIPOC</h2>
             </div>
-            <p>Arrastra cada tarjeta a la columna que le corresponde. También puedes seleccionarla y usar las teclas de dirección.</p>
+            <p>Clasifica las 12 tarjetas del caso. Arrástralas o selecciónalas y activa la columna con Enter. Dos tarjetas son distractores: no pertenecen a este proceso.</p>
           </div>
 
           <div class="simulator-shell">
@@ -613,18 +615,27 @@
               <div>
                 <span class="toolbar-label">Reto práctico</span>
                 <h3>Caracteriza el proceso de solicitud de software</h3>
+                <p class="toolbar-context">Caso: un área del negocio necesita un módulo nuevo. Ubica cada elemento en el componente SIPOC que le corresponde y deja fuera lo que pertenece a otro proceso.</p>
               </div>
-              <div class="simulator-score" aria-live="polite"><strong id="simulator-score">0/5</strong><span>ubicadas</span></div>
+              <div class="simulator-score" aria-live="polite"><strong id="simulator-score">0/12</strong><span>clasificadas</span></div>
             </div>
+
+            <p class="simulator-best" id="simulator-best" hidden></p>
+
+            <dl class="simulator-metrics" aria-label="Indicadores del intento actual">
+              <div><dt>Precisión</dt><dd id="simulator-accuracy" aria-live="polite">100%</dd></div>
+              <div><dt>Errores</dt><dd id="simulator-errors" aria-live="polite">0</dd></div>
+              <div><dt>Pistas usadas</dt><dd id="simulator-hints" aria-live="polite">0</dd></div>
+            </dl>
 
             <div class="simulator-instructions">
               <span class="instruction-icon" aria-hidden="true">↔</span>
-              <p><strong>¿Cómo participar?</strong> Toma una tarjeta del banco y llévala a su lugar. Si te equivocas, recibirás una pista inmediata.</p>
+              <p><strong>¿Cómo participar?</strong> Toma una tarjeta del banco y llévala a su lugar. Cada intento fallido suma un error y cada pista queda registrada: el resumen final reporta tu precisión.</p>
               <button class="button button-ghost button-small" type="button" id="simulator-hint">Ver pista</button>
             </div>
 
             <div class="card-bank" id="card-bank" aria-label="Banco de tarjetas sin ubicar">
-              <div class="bank-heading"><span>Banco de tarjetas</span><span id="bank-count">5 disponibles</span></div>
+              <div class="bank-heading"><span>Banco de tarjetas</span><span id="bank-count">12 disponibles</span></div>
               <div class="bank-cards" id="bank-cards"></div>
             </div>
 
@@ -634,31 +645,54 @@
               <div class="board-label board-label-p">P</div>
               <div class="board-label board-label-o">O</div>
               <div class="board-label board-label-c">C</div>
-              <div class="drop-zone" data-slot="supplier" tabindex="0" role="region" aria-label="Columna Proveedor">
-                <div class="drop-zone-header"><span class="drop-letter">S</span><div><strong>Supplier</strong><small>Proveedor</small></div></div>
-                <div class="drop-zone-content"></div><p class="drop-placeholder">Suelta aquí la fuente</p>
+              <div class="drop-zone" data-slot="supplier" tabindex="0" role="group" aria-label="Columna Proveedor. Dos tarjetas.">
+                <div class="drop-zone-header"><span class="drop-letter">S</span><div><strong>Supplier</strong><small>Proveedor · 2 tarjetas</small></div></div>
+                <div class="drop-zone-content"></div><p class="drop-placeholder">Quién entrega algo al proceso</p>
               </div>
-              <div class="drop-zone" data-slot="input" tabindex="0" role="region" aria-label="Columna Entrada">
-                <div class="drop-zone-header"><span class="drop-letter">I</span><div><strong>Input</strong><small>Entrada</small></div></div>
-                <div class="drop-zone-content"></div><p class="drop-placeholder">Suelta aquí lo que ingresa</p>
+              <div class="drop-zone" data-slot="input" tabindex="0" role="group" aria-label="Columna Entrada. Dos tarjetas.">
+                <div class="drop-zone-header"><span class="drop-letter">I</span><div><strong>Input</strong><small>Entrada · 2 tarjetas</small></div></div>
+                <div class="drop-zone-content"></div><p class="drop-placeholder">Qué ingresa para ser transformado</p>
               </div>
-              <div class="drop-zone" data-slot="process" tabindex="0" role="region" aria-label="Columna Proceso">
-                <div class="drop-zone-header"><span class="drop-letter">P</span><div><strong>Process</strong><small>Proceso</small></div></div>
-                <div class="drop-zone-content"></div><p class="drop-placeholder">Suelta aquí la transformación</p>
+              <div class="drop-zone" data-slot="process" tabindex="0" role="group" aria-label="Columna Proceso. Dos tarjetas.">
+                <div class="drop-zone-header"><span class="drop-letter">P</span><div><strong>Process</strong><small>Proceso · 2 tarjetas</small></div></div>
+                <div class="drop-zone-content"></div><p class="drop-placeholder">Qué actividad transforma</p>
               </div>
-              <div class="drop-zone" data-slot="output" tabindex="0" role="region" aria-label="Columna Salida">
-                <div class="drop-zone-header"><span class="drop-letter">O</span><div><strong>Output</strong><small>Salida</small></div></div>
-                <div class="drop-zone-content"></div><p class="drop-placeholder">Suelta aquí el resultado</p>
+              <div class="drop-zone" data-slot="output" tabindex="0" role="group" aria-label="Columna Salida. Dos tarjetas.">
+                <div class="drop-zone-header"><span class="drop-letter">O</span><div><strong>Output</strong><small>Salida · 2 tarjetas</small></div></div>
+                <div class="drop-zone-content"></div><p class="drop-placeholder">Qué resultado se produce</p>
               </div>
-              <div class="drop-zone" data-slot="customer" tabindex="0" role="region" aria-label="Columna Cliente">
-                <div class="drop-zone-header"><span class="drop-letter">C</span><div><strong>Customer</strong><small>Cliente</small></div></div>
-                <div class="drop-zone-content"></div><p class="drop-placeholder">Suelta aquí quien recibe</p>
+              <div class="drop-zone" data-slot="customer" tabindex="0" role="group" aria-label="Columna Cliente. Dos tarjetas.">
+                <div class="drop-zone-header"><span class="drop-letter">C</span><div><strong>Customer</strong><small>Cliente · 2 tarjetas</small></div></div>
+                <div class="drop-zone-content"></div><p class="drop-placeholder">Quién recibe el resultado</p>
               </div>
+            </div>
+
+            <div class="drop-zone drop-zone-excluded" data-slot="none" tabindex="0" role="group" aria-label="Zona Fuera del proceso. Dos tarjetas.">
+              <div class="drop-zone-header"><span class="drop-letter">✕</span><div><strong>Fuera del proceso</strong><small>Delimita el alcance · 2 tarjetas</small></div></div>
+              <div class="drop-zone-content"></div><p class="drop-placeholder">Lo que pertenece a otro proceso</p>
             </div>
 
             <div class="simulator-feedback" id="simulator-feedback" aria-live="polite" aria-atomic="true">
               <span class="feedback-icon" aria-hidden="true">i</span><span>Selecciona una tarjeta para comenzar.</span>
             </div>
+            <div class="simulator-summary" id="simulator-summary" tabindex="-1" hidden aria-labelledby="summary-title">
+              <h3 id="summary-title">Resultado del reto</h3>
+              <dl class="summary-grid">
+                <div><dt>Precisión</dt><dd id="summary-accuracy">—</dd></div>
+                <div><dt>Errores</dt><dd id="summary-errors">—</dd></div>
+                <div><dt>Pistas</dt><dd id="summary-hints">—</dd></div>
+                <div><dt>Tiempo</dt><dd id="summary-time">—</dd></div>
+              </dl>
+              <div class="summary-matrix" id="summary-matrix"></div>
+              <p class="summary-best" id="summary-best"></p>
+              <p class="summary-code">Código de verificación para tu evidencia: <code id="summary-code">—</code></p>
+              <div class="summary-actions">
+                <button class="button button-secondary button-small" type="button" id="summary-copy">Copiar matriz SIPOC</button>
+                <span class="summary-status" id="summary-copy-status" aria-live="polite"></span>
+              </div>
+              <p class="summary-note">Captura esta tarjeta completa (12/12, precisión y código) como evidencia de la Estación 3 y pega la matriz copiada en el documento de tu proyecto formativo.</p>
+            </div>
+
             <div class="simulator-footer">
               <button class="button button-secondary" type="button" id="simulator-reset">Reiniciar reto</button>
               <p><span aria-hidden="true">⌨</span> Consejo: usa Tab para moverte y Enter para colocar una tarjeta seleccionada.</p>
@@ -732,7 +766,7 @@
               <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; color: var(--text-secondary, #475569); line-height: 1.6;">
                 <li><strong>Estación 1 (Conceptos):</strong> Identificación de actores, eventos iniciales, transformaciones y resultados.</li>
                 <li><strong>Estación 2 (Anatomía del Proceso):</strong> Caracterización del caso de estudio y matriz de observación.</li>
-                <li><strong>Estación 3 (Simulador Interactivo):</strong> Ubicación correcta de tarjetas en los 5 componentes SIPOC (5/5).</li>
+                <li><strong>Estación 3 (Simulador Interactivo):</strong> Clasificación correcta de las 12 tarjetas del caso (10 en los 5 componentes SIPOC y 2 fuera del alcance), con precisión, errores y código de verificación.</li>
                 <li><strong>Estación 4 (Autoevaluación):</strong> Verificación de conceptos clave de análisis del negocio.</li>
               </ul>
 
@@ -745,7 +779,7 @@
                 <li style="margin-bottom: 0.35rem;"><strong>Portada Institucional SENA:</strong> Nombre del Proyecto Formativo, Nombres de los Aprendices, Ficha y Centro de Formación.</li>
                 <li style="margin-bottom: 0.35rem;"><strong>Caracterización del Proceso:</strong> Nombre, objetivo y alcance del proceso clave de software estudiado.</li>
                 <li style="margin-bottom: 0.35rem;"><strong>Matriz SIPOC Integrada:</strong> Tabla detallada de Proveedores (Supplier), Entradas (Input), Subprocesos/Pasos (Process), Salidas (Output) y Clientes (Customer).</li>
-                <li style="margin-bottom: 0.35rem;"><strong>Evidencia del Recorrido Web:</strong> Captura de pantalla legible del Simulador SIPOC completado exitosamente (5/5) y resultado del Cuestionario de comprobación.</li>
+                <li style="margin-bottom: 0.35rem;"><strong>Evidencia del Recorrido Web:</strong> Captura de pantalla legible del Simulador SIPOC completado exitosamente (12/12, con precisión y código de verificación visibles) y resultado del Cuestionario de comprobación.</li>
                 <li style="margin-bottom: 0.35rem;"><strong>Conclusiones de Modelado:</strong> Breve análisis sobre cómo esta caracterización previene ambigüedades antes de iniciar la especificación técnica.</li>
               </ol>
               
@@ -771,6 +805,7 @@
             <details class="glossary-item"><summary>Requisito</summary><p>Necesidad o condición que el software debe satisfacer para aportar valor.</p></details>
             <details class="glossary-item"><summary>Actor</summary><p>Persona, área o sistema que participa, entrega información o recibe resultados.</p></details>
             <details class="glossary-item"><summary>SIPOC</summary><p>Herramienta de alto nivel para identificar Supplier, Input, Process, Output y Customer.</p></details>
+          </div>
         </div>
 
         <!-- Ruta Pedagógica ADSO: Navegación a la Siguiente Guía -->
