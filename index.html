@@ -10,9 +10,10 @@
     <title>Guía 1 | Modelado de procesos con SIPOC</title>
     <!-- El sufijo ?v= evita que el navegador sirva versiones antiguas en caché.
          Súbelo cada vez que cambies el CSS o el simulador. -->
-    <link rel="stylesheet" href="css/styles.css?v=2" />
+    <link rel="stylesheet" href="css/styles.css?v=3" />
     <script src="js/simulator.js?v=2" defer></script>
     <script src="js/app.js?v=2" defer></script>
+    <script src="js/workshop.js?v=3" defer></script>
   </head>
 
   <body>
@@ -31,6 +32,7 @@
         <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
           <a class="nav-link is-active" href="#inicio">Inicio</a>
           <a class="nav-link" href="#descubrimiento">Descubrimiento</a>
+          <a class="nav-link" href="#instrumentos">Instrumentos</a>
           <a class="nav-link" href="#conceptos">Conceptos</a>
           <a class="nav-link" href="#proceso">Proceso</a>
           <a class="nav-link" href="#simulador">Simulador</a>
@@ -65,7 +67,7 @@
             </div>
 
             <div class="hero-actions">
-              <a class="button button-primary" href="#conceptos">Comenzar la guía <span aria-hidden="true">→</span></a>
+              <a class="button button-primary" href="#descubrimiento">Comenzar la guía <span aria-hidden="true">→</span></a>
               <a class="text-link" href="#simulador">Ir al simulador <span aria-hidden="true">↗</span></a>
             </div>
           </div>
@@ -201,7 +203,7 @@
                 <div style="background: rgba(30, 41, 59, 0.8); border: 1px solid #334155; border-radius: 8px; padding: 14px;">
                   <span style="color: #4ade80; font-weight: 800; font-size: 0.8rem;">FASE 4</span>
                   <h5 style="color: #f8fafc; font-size: 0.9rem; margin-top: 4px; margin-bottom: 6px;">4. Triangulación y Validación</h5>
-                  <p style="color: #94a3b8; font-size: 0.775rem; margin: 0;">Cruzar lo que se <em>dice</em> (Entrevista), se <em>hace</em> (Observación) y se <em>documenta</em> (Minuta) para extraer el Requisito.</p>
+                  <p style="color: #94a3b8; font-size: 0.775rem; margin: 0;">Cruzar lo que se <em>dice</em>, se <em>hace</em> y se <em>documenta</em> para consolidar hallazgos y preguntas de validación.</p>
                 </div>
               </div>
             </div>
@@ -261,7 +263,7 @@
               <p style="color: #cbd5e1; font-size: 0.8rem; margin: 0;">
                 Un error común del programador novato es confiar ciegamente en una sola fuente. El analista profesional <strong>triangula</strong>:
                 compara la <em>Entrevista</em> (lo que afirman que hacen), la <em>Observación</em> (lo que realmente hacen en la práctica) y el <em>Análisis Documental</em> (lo que está registrado).
-                Solo cuando las 3 fuentes coinciden o se concilian, se redacta el Requisito Funcional definitivo.
+                Cuando las fuentes coinciden o sus diferencias se concilian, se formula un <strong>hallazgo validado</strong>. Ese hallazgo pasa a la Guía 2 como insumo de requisitos candidatos; todavía no es un requisito definitivo.
               </p>
             </div>
           </div>
@@ -270,9 +272,9 @@
             <div class="section-heading compact-heading">
               <div>
                 <p class="eyebrow"><span class="eyebrow-dot"></span> Insumos para la Competencia</p>
-                <h2 id="techniques-title">Técnicas de Recolección de Información</h2>
+                <h2 id="techniques-title">Técnicas de Recolección de Información e Instrumentos de Campo</h2>
               </div>
-              <p>Para levantar requisitos reales sin asumir, el analista ADSO aplica 5 técnicas fundamentales con sus respectivos ejercicios prácticos.</p>
+              <p>Para levantar requisitos reales sin asumir, el analista ADSO aplica 5 técnicas fundamentales con sus respectivos instrumentos estructurados y matrices de conversión a la Guía 2 (RF y RNF).</p>
             </div>
 
             <div class="techniques-grid">
@@ -282,20 +284,31 @@
                   <span class="technique-badge">01 · Cualitativa</span>
                   <h3>Entrevista Semiestructurada</h3>
                 </div>
-                <p class="technique-desc">Diálogo profundo y guiado con actores clave (vigilantes, administradores, usuarios) para explorar expectativas, excepciones y dolores del proceso actual.</p>
+                <p class="technique-desc">Diálogo profundo y guiado con actores clave (vigilantes, administradores, instructores) para explorar expectativas, excepciones no escritas y dolores del proceso actual.</p>
                 <div class="technique-meta">
-                  <span><strong>Instrumento:</strong> Guion de preguntas abiertas</span>
-                  <span><strong>Entregable:</strong> Transcripción de hallazgos y necesidades</span>
+                  <span><strong>Instrumento:</strong> Guion de Entrevista (Apertura, Exploración, Cierre)</span>
+                  <span><strong>Entregable:</strong> Transcripción de hallazgos, RF-01 y RNF-01</span>
                 </div>
+
+                <!-- Instrumento Detallado -->
+                <div style="margin-top: 12px; margin-bottom: 12px; background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 6px; padding: 12px;">
+                  <strong style="color: #38bdf8; font-size: 0.8rem; display: block; margin-bottom: 6px;">📋 Plantilla del Instrumento: Guion de Entrevista de Campo</strong>
+                  <ul style="color: #cbd5e1; font-size: 0.75rem; margin: 0; padding-left: 16px;">
+                    <li><strong>Fase 1 (Apertura):</strong> Presentación del analista, objetivo del proyecto y consentimiento informado.</li>
+                    <li><strong>Fase 2 (Exploración Central):</strong> Preguntas abiertas sobre el flujo habitual ("¿Cómo registra la entrada?") y cuellos de botella.</li>
+                    <li><strong>Fase 3 (Excepciones y RNF):</strong> Indagar fallas de red, usuarios sin documento y tiempos máximos tolerables de espera.</li>
+                  </ul>
+                </div>
+
                 <details class="exercise-box">
-                  <summary>⚡ Ejercicio Práctico 1: Roleplay de Entrevista al Guarda de Seguridad</summary>
+                  <summary>⚡ Ejercicio Práctico Guiado 1: Roleplay y Selección de Preguntas No Sesgadas</summary>
                   <div class="exercise-content">
                     <p><strong>Escenario:</strong> Entrevistas a Don José, guarda del acceso principal del Centro Agroempresarial, para entender cómo valida el ingreso de computadores de visitantes.</p>
                     <div class="exercise-task">
                       <p><strong>Paso 1:</strong> Selecciona de la siguiente lista las 3 preguntas abiertas más efectivas para descubrir excepciones y reglas no escritas:</p>
                       <div class="exercise-options">
                         <label class="exercise-opt"><input type="checkbox" class="ex1-check" value="q1" /> <span>¿Qué sucede exactamente cuando un visitante trae un portátil sin autorización escrita previa?</span></label>
-                        <label class="exercise-opt"><input type="checkbox" class="ex1-check" value="q2" /> <span>¿El software actual en Excel le parece rápido o lento?</span></label>
+                        <label class="exercise-opt"><input type="checkbox" class="ex1-check" value="q2" /> <span>¿El software actual en Excel le parece rápido o lento? (Sesgada)</span></label>
                         <label class="exercise-opt"><input type="checkbox" class="ex1-check" value="q3" /> <span>En las horas pico de ingreso (7:00 AM), ¿cuáles son las mayores dificultades que enfrenta en la garita?</span></label>
                         <label class="exercise-opt"><input type="checkbox" class="ex1-check" value="q4" /> <span>¿Quién autoriza una excepción cuando la persona no aparece registrada en la planilla del día?</span></label>
                       </div>
@@ -314,21 +327,32 @@
                 </div>
                 <p class="technique-desc">Instrumento estructurado aplicado a un volumen amplio de personas para medir frecuencias, volúmenes de dispositivos y patrones comunes de uso.</p>
                 <div class="technique-meta">
-                  <span><strong>Instrumento:</strong> Formulario cerrado con escala Likert</span>
-                  <span><strong>Entregable:</strong> Reporte de tendencias e indicadores</span>
+                  <span><strong>Instrumento:</strong> Cuestionario Cerrado con Escala Likert</span>
+                  <span><strong>Entregable:</strong> Reporte estadístico, RF-02 y RNF-02</span>
                 </div>
+
+                <!-- Instrumento Detallado -->
+                <div style="margin-top: 12px; margin-bottom: 12px; background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 6px; padding: 12px;">
+                  <strong style="color: #38bdf8; font-size: 0.8rem; display: block; margin-bottom: 6px;">📊 Plantilla del Instrumento: Cuestionario de Caracterización Masiva</strong>
+                  <ul style="color: #cbd5e1; font-size: 0.75rem; margin: 0; padding-left: 16px;">
+                    <li><strong>Sección A (Demografía):</strong> Rol (Aprendiz / Instructor / Visitante) y Frecuencia de ingreso.</li>
+                    <li><strong>Sección B (Volumen):</strong> Cantidad promedio de equipos portátiles o herramientas ingresados por persona.</li>
+                    <li><strong>Sección C (Likert 1-5):</strong> Nivel de satisfacción con el tiempo actual de espera en garita.</li>
+                  </ul>
+                </div>
+
                 <details class="exercise-box">
-                  <summary>⚡ Ejercicio Práctico 2: Cuestionario de Frecuencia para Visitantes</summary>
+                  <summary>⚡ Ejercicio Práctico Guiado 2: Análisis Estadístico y Frecuencia de Uso</summary>
                   <div class="exercise-content">
-                    <p><strong>Escenario:</strong> Diseñas un cuestionario masivo para 200 visitantes e instructores del centro de formación.</p>
+                    <p><strong>Escenario:</strong> Aplicas un cuestionario masivo a 200 aprendices e instructores del centro de formación.</p>
                     <div class="exercise-task">
-                      <p><strong>Estructura del Instrumento Recomendado:</strong></p>
+                      <p><strong>Resultados del Cuestionario Aplicado:</strong></p>
                       <div class="matching-box">
-                        <div class="matching-item"><strong>1. Frecuencia de ingreso:</strong> Pregunta de opción única ordinal (<em>Diario / Semanal / Mensual / Ocasional</em>).</div>
-                        <div class="matching-item"><strong>2. Tipo de equipo ingresado:</strong> Selección múltiple con casilla (<em>Portátil / Herramienta / Cámara / Otro</em>).</div>
-                        <div class="matching-item"><strong>3. Nivel de satisfacción:</strong> Escala Likert de 5 puntos (<em>1 - Muy Ineficiente a 5 - Muy Eficiente</em>).</div>
+                        <div class="matching-item"><strong>1. Frecuencia de múltiple equipo:</strong> El 85% de los encuestados ingresa con portátil y tablet simultáneamente.</div>
+                        <div class="matching-item"><strong>2. Concurrencia máxima:</strong> El 90% llega entre las 6:45 AM y las 7:15 AM.</div>
+                        <div class="matching-item"><strong>3. Nivel de insatisfacción:</strong> 4.2 / 5 califica como "Muy lento" el registro manual actual.</div>
                       </div>
-                      <p class="exercise-tip">💡 <em>Tip ADSO:</em> Las encuestas masivas deben tomar menos de 3 minutos para asegurar un porcentaje de respuesta superior al 70%.</p>
+                      <p class="exercise-tip">💡 <em>Impacto en Guía 2:</em> Este hallazgo define que el sistema debe soportar alta concurrencia simultánea (RNF de Rendimiento) y permitir múltiples equipos por usuario (RF Funcional).</p>
                     </div>
                   </div>
                 </details>
@@ -338,17 +362,27 @@
               <article class="technique-card">
                 <div class="technique-header">
                   <span class="technique-badge">03 · Trabajo de Campo</span>
-                  <h3>Observación Directa (Job Shadowing)</h3>
+                  <h3>Observación Directa (Job Shadowing / Gemba)</h3>
                 </div>
-                <p class="technique-desc">Presencia física en el lugar de los hechos (Gemba Walk) para documentar el comportamiento real del proceso, tiempos de ciclo y pasos informales.</p>
+                <p class="technique-desc">Presencia física silenciosa en el lugar de los hechos (Gemba Walk) para documentar el comportamiento real del proceso, tiempos de ciclo y pasos informales.</p>
                 <div class="technique-meta">
-                  <span><strong>Instrumento:</strong> Ficha de campo con cronometraje</span>
-                  <span><strong>Entregable:</strong> Diagrama de flujo real AS-IS y cuellos de botella</span>
+                  <span><strong>Instrumento:</strong> Ficha de Campo y Tiempos de Ciclo</span>
+                  <span><strong>Entregable:</strong> Diagrama AS-IS real, RF-03 y RNF-03</span>
                 </div>
+
+                <!-- Instrumento Detallado -->
+                <div style="margin-top: 12px; margin-bottom: 12px; background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 6px; padding: 12px;">
+                  <strong style="color: #38bdf8; font-size: 0.8rem; display: block; margin-bottom: 6px;">⏱️ Plantilla del Instrumento: Ficha de Registro de Tiempos y Movimientos</strong>
+                  <ul style="color: #cbd5e1; font-size: 0.75rem; margin: 0; padding-left: 16px;">
+                    <li><strong>Columnas de Registro:</strong> [Paso N°] | [Actor] | [Acción Observada] | [Tiempo Medido (seg)] | [Interrupción / Reinvención].</li>
+                    <li><strong>Regla de Trabajo de Campo:</strong> No intervenir ni corregir al usuario durante la observación para no distorsionar la muestra.</li>
+                  </ul>
+                </div>
+
                 <details class="exercise-box">
-                  <summary>⚡ Ejercicio Práctico 3: Ficha de Observación en Garita de Acceso</summary>
+                  <summary>⚡ Ejercicio Práctico Guiado 3: Ficha de Cronometraje en Garita de Acceso</summary>
                   <div class="exercise-content">
-                    <p><strong>Escenario:</strong> Observas durante 30 minutos el proceso de registro manual en la garita de control.</p>
+                    <p><strong>Escenario:</strong> Cronometras durante 30 minutos el proceso manual en la garita de control.</p>
                     <div class="exercise-task">
                       <p><strong>Registro de Campo Observado:</strong></p>
                       <table class="mini-obs-table" role="table">
@@ -356,13 +390,13 @@
                           <tr><th>Paso Observado</th><th>Tiempo Medido</th><th>Hallazgo de Campo</th></tr>
                         </thead>
                         <tbody>
-                          <tr><td>1. Presentación de documento y equipo</td><td>45 seg</td><td>El visitante debe dictar el serial verbalmente al guarda.</td></tr>
-                          <tr><td>2. Búsqueda en minuta física de papel</td><td>2 min 10 seg</td><td>Hoja arrugada; dificultad para ubicar casillas vacías.</td></tr>
-                          <tr><td>3. Diligenciamiento de ficha y firma</td><td>1 min 15 seg</td><td>Genera filas de 5 personas en horas pico (7:00 AM).</td></tr>
+                          <tr><td>1. Dictar serial y cédula a voz alzada</td><td>45 seg</td><td>Errores frecuentes de digitación por ruido ambiental.</td></tr>
+                          <tr><td>2. Buscar casilla libre en minuta de papel</td><td>2 min 10 seg</td><td>Hojas arrugadas y espacio insuficiente.</td></tr>
+                          <tr><td>3. Diligenciar ficha física y firmar</td><td>1 min 15 seg</td><td>Genera colas de más de 10 personas en hora pico.</td></tr>
                         </tbody>
                       </table>
                       <div class="insight-box">
-                        <strong>📌 Insumo Obtenido:</strong> El tiempo de registro manual actual es de <strong>4 minutos por persona</strong>. El nuevo software debe reducir este paso a menos de 30 segundos.
+                        <strong>📌 Insumo para Guía 2:</strong> Tiempo total actual = 4 min/persona. <strong>RF-03:</strong> Escaneo de QR. <strong>RNF-03 (Rendimiento):</strong> El tiempo de procesamiento por usuario debe ser menor a 5 segundos.
                       </div>
                     </div>
                   </div>
@@ -375,23 +409,36 @@
                   <span class="technique-badge">04 · Análisis Documental</span>
                   <h3>Revisión de Artefactos y Formatos</h3>
                 </div>
-                <p class="technique-desc">Inspección detallada de minutas físicas, carpetas Excel, normativas internas, comprobantes y reportes existentes en la entidad.</p>
+                <p class="technique-desc">Inspección detallada de minutas físicas, libros de papel, carpetas Excel, normativas internas, comprobantes y reportes existentes en la entidad.</p>
                 <div class="technique-meta">
-                  <span><strong>Instrumento:</strong> Matriz de campos y reglas de negocio</span>
-                  <span><strong>Entregable:</strong> Diccionario de datos inicial para la BD</span>
+                  <span><strong>Instrumento:</strong> Matriz de Auditoría Documental y Reglas</span>
+                  <span><strong>Entregable:</strong> Diccionario de Datos, RF-04 y RNF-04</span>
                 </div>
+
+                <!-- Instrumento Detallado -->
+                <div style="margin-top: 12px; margin-bottom: 12px; background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 6px; padding: 12px;">
+                  <strong style="color: #38bdf8; font-size: 0.8rem; display: block; margin-bottom: 6px;">📂 Plantilla del Instrumento: Matriz de Auditoría Documental</strong>
+                  <ul style="color: #cbd5e1; font-size: 0.75rem; margin: 0; padding-left: 16px;">
+                    <li><strong>Estructura:</strong> [Nombre del Campo] | [Tipo de Dato] | [¿Obligatorio?] | [Regla de Negocio] | [Vacío / Defectos Identificados].</li>
+                    <li><strong>Propósito:</strong> Evitar la omisión de campos requeridos por la ley o por auditorías internas.</li>
+                  </ul>
+                </div>
+
                 <details class="exercise-box">
-                  <summary>⚡ Ejercicio Práctico 4: Auditoría de Minuta Física vs. Requisitos Digitales</summary>
+                  <summary>⚡ Ejercicio Práctico Guiado 4: Auditoría de Libro Físico vs. Requisitos Digitales</summary>
                   <div class="exercise-content">
-                    <p><strong>Escenario:</strong> Auditoría al libro físico de registro en papel utilizado actualmente.</p>
+                    <p><strong>Escenario:</strong> Auditoría a la minuta impreso en papel utilizada actualmente.</p>
                     <div class="exercise-task">
-                      <p><strong>Campos presentes en el libro impreso:</strong> <code>[Fecha] [Hora] [Nombre Visitante] [Cédula] [Marca Equipo] [Serial] [Firma]</code></p>
-                      <p><strong>3 Vacíos Críticos Identificados para el Desarrollo de Software:</strong></p>
+                      <p><strong>Campos en libro impreso:</strong> <code>[Fecha] [Hora] [Nombre] [Cédula] [Marca Equipo] [Serial] [Firma]</code></p>
+                      <p><strong>3 Vacíos Críticos Descubiertos:</strong></p>
                       <ul class="exercise-bullet-list">
-                        <li><strong>Ausencia de Correo/Teléfono:</strong> Imposibilita el envío automatizado del comprobante de ingreso.</li>
-                        <li><strong>Falta de Estado Físico del Equipo:</strong> Ocasiona reclamos por rayones o daños previos no registrados.</li>
-                        <li><strong>Sin Identificador del Funcionario Solicitante:</strong> No hay trazabilidad de quién autorizó la entrada.</li>
+                        <li><strong>Ausencia de Correo/Teléfono:</strong> Imposibilita notificaciones digitales.</li>
+                        <li><strong>Sin Registro de Estado Físico:</strong> Ocasiona reclamos por daños preexistentes.</li>
+                        <li><strong>Sin ID del Funcionario Autorizador:</strong> Falta de trazabilidad.</li>
                       </ul>
+                      <div class="insight-box">
+                        <strong>📌 Insumo para Guía 2:</strong> <strong>RF-04:</strong> Formulario con validación estricta de campos obligatorios y captura de evidencia fotográfica preexistente.
+                      </div>
                     </div>
                   </div>
                 </details>
@@ -403,28 +450,41 @@
                   <span class="technique-badge">05 · Colaborativa</span>
                   <h3>Taller de Trabajo (Mesa JAD - Joint Application Development)</h3>
                 </div>
-                <p class="technique-desc">Reunión facilitada entre representantes de diferentes áreas (Seguridad, Instructores, Directivos, TI) para conciliar visiones contrapuestas y acordar reglas.</p>
+                <p class="technique-desc">Reunión facilitada entre representantes de diferentes áreas (Seguridad, Instructores, Directivos, TI) para conciliar visiones contrapuestas y acordar reglas globales.</p>
                 <div class="technique-meta">
-                  <span><strong>Instrumento:</strong> Matriz de Puntos de Dolor y Consensos</span>
-                  <span><strong>Entregable:</strong> Lista consolidada de alcance y restricciones</span>
+                  <span><strong>Instrumento:</strong> Matriz de Consenso y Puntos de Dolor JAD</span>
+                  <span><strong>Entregable:</strong> Acta de Alcance Consolidada, RF-05 y RNF-05</span>
                 </div>
+
+                <!-- Instrumento Detallado -->
+                <div style="margin-top: 12px; margin-bottom: 12px; background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 6px; padding: 12px;">
+                  <strong style="color: #38bdf8; font-size: 0.8rem; display: block; margin-bottom: 6px;">🤝 Plantilla del Instrumento: Matriz de Consenso JAD</strong>
+                  <ul style="color: #cbd5e1; font-size: 0.75rem; margin: 0; padding-left: 16px;">
+                    <li><strong>Estructura:</strong> [Rol / Área] | [Interés / Exigencia] | [Punto de Conflicto] | [Acuerdo Transaccional Aprobado].</li>
+                    <li><strong>Objetivo:</strong> Eliminar requisitos contradictorios antes de escribir la primera línea de código.</li>
+                  </ul>
+                </div>
+
                 <details class="exercise-box">
-                  <summary>⚡ Ejercicio Práctico 5: Matriz de Consenso entre Seguridad y Operaciones</summary>
+                  <summary>⚡ Ejercicio Práctico Guiado 5: Matriz de Consenso Seguridad vs. Operaciones</summary>
                   <div class="exercise-content">
-                    <p><strong>Escenario:</strong> Conflicto de expectativas durante el taller JAD multipapel.</p>
+                    <p><strong>Escenario:</strong> Conflicto de expectativas durante la sesión JAD.</p>
                     <div class="exercise-task">
                       <div class="consensus-grid">
                         <div class="consensus-col">
                           <span class="consensus-role">Seguridad Exige:</span>
-                          <p>Verificación minuciosa del serial y foto obligatoria para evitar hurtos.</p>
+                          <p>Verificación minuciosa, captura de foto obligatoria e inspección visual completa.</p>
                         </div>
                         <div class="consensus-col">
                           <span class="consensus-role">Instructores Exigen:</span>
-                          <p>Ingreso ágil en menos de 10 segundos para iniciar clase a tiempo.</p>
+                          <p>Ingreso ultrarrápido en menos de 5 segundos para no perder tiempo de clase.</p>
                         </div>
                       </div>
                       <div class="consensus-outcome">
-                        <strong>🤝 Acuerdos de Consenso Logrado:</strong> Pre-registro digital previo con Código QR dinámico para usuarios frecuentes (ingreso en 5 seg) y foto obligatoria únicamente para el registro por primera vez.
+                        <strong>🤝 Consenso Alcanzado:</strong> Pre-registro digital con Código QR dinámico para usuarios frecuentes (ingreso en 3 seg) y captura fotográfica por cámara únicamente durante el registro inicial.
+                      </div>
+                      <div class="insight-box">
+                        <strong>📌 Insumo para Guía 2:</strong> <strong>RF-05:</strong> Validación condicional de fotografía según historial. <strong>RNF-05 (Seguridad):</strong> Generación de tokens HMAC temporales para los códigos QR.
                       </div>
                     </div>
                   </div>
@@ -433,50 +493,56 @@
             </div>
           </div>
 
-          <!-- Matriz de Transformación: De la Técnica al Requisito Funcional -->
-          <div class="transformation-section" style="margin-top: 40px; margin-bottom: 48px; background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(59, 130, 246, 0.2); border-radius: 12px; padding: 24px;">
+          <!-- Matriz Maestra de Conversión Integrada: De Guía 1 a Guía 2 (RF y RNF) -->
+          <div class="transformation-section" style="margin-top: 40px; margin-bottom: 48px; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 12px; padding: 24px;">
             <div class="section-heading compact-heading" style="margin-bottom: 20px;">
               <div>
-                <p class="eyebrow" style="color: #60a5fa;"><span class="eyebrow-dot"></span> Puente entre Análisis y Código</p>
-                <h3 style="font-size: 1.25rem; font-weight: 700; color: #f8fafc;">Del Hallazgo al Requisito Funcional (RF)</h3>
+                <p class="eyebrow" style="color: #60a5fa;"><span class="eyebrow-dot"></span> Puente de Ingeniería de Software</p>
+                <h3 style="font-size: 1.25rem; font-weight: 700; color: #f8fafc;">Matriz Maestra de Conversión: De la Recolección (Guía 1) a RF y RNF (Guía 2)</h3>
               </div>
-              <p style="color: #94a3b8; font-size: 0.875rem;">Para programar un sistema, el analista traduce lo descubierto con cada técnica en enunciados funcionales precisos (RF).</p>
+              <p style="color: #94a3b8; font-size: 0.875rem;">La matriz muestra candidatos de RF y RNF derivados de hallazgos validados. En la Guía 2 se separan, miden, priorizan y aprueban antes de orientar la construcción.</p>
             </div>
 
             <div style="overflow-x: auto;">
-              <table style="width: 100%; border-collapse: collapse; font-size: 0.875rem; color: #e2e8f0; text-align: left;">
+              <table style="width: 100%; border-collapse: collapse; font-size: 0.825rem; color: #e2e8f0; text-align: left;">
                 <thead>
-                  <tr style="background: rgba(30, 41, 59, 0.8); border-bottom: 2px solid #334155;">
-                    <th style="padding: 10px 12px; color: #38bdf8;">Técnica Aplicada</th>
-                    <th style="padding: 10px 12px; color: #f1f5f9;">Hallazgo Recolectado en el Dominio</th>
-                    <th style="padding: 10px 12px; color: #4ade80;">Requerimiento Funcional (RF) Extraído</th>
+                  <tr style="background: rgba(30, 41, 59, 0.9); border-bottom: 2px solid #475569;">
+                    <th style="padding: 10px; color: #38bdf8;">Técnica e Instrumento</th>
+                    <th style="padding: 10px; color: #f1f5f9;">Hallazgo del Dominio (Guía 1)</th>
+                    <th style="padding: 10px; color: #4ade80;">Requerimiento Funcional (RF - Guía 2)</th>
+                    <th style="padding: 10px; color: #c084fc;">Requerimiento No Funcional (RNF - Guía 2)</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr style="border-bottom: 1px solid #334155;">
-                    <td style="padding: 10px 12px; font-weight: 600; color: #93c5fd;">01. Entrevista Semiestructurada</td>
-                    <td style="padding: 10px 12px; color: #cbd5e1;">"Don José indica que cuando llega alguien sin cita previa, debe llamar por teléfono al instructor para que autorice el ingreso."</td>
-                    <td style="padding: 10px 12px; color: #86efac;"><strong>RF-01:</strong> El sistema debe permitir al guarda enviar una notificación de autorización express en tiempo real al teléfono del instructor solicitante.</td>
+                    <td style="padding: 10px; font-weight: 600; color: #93c5fd;">01. Entrevista Semiestructurada<br><small style="color:#94a3b8">Guion Abierto</small></td>
+                    <td style="padding: 10px; color: #cbd5e1;">"El guarda debe llamar por teléfono al instructor para autorizar a visitantes sin cita."</td>
+                    <td style="padding: 10px; color: #86efac;"><strong>RF-01:</strong> Enviar notificación push/SMS de autorización express en tiempo real al instructor solicitante.</td>
+                    <td style="padding: 10px; color: #e9d5ff;"><strong>RNF-01 (Seguridad):</strong> El token de aprobación express vence a los 5 minutos y se audita con IP y fecha.</td>
                   </tr>
                   <tr style="border-bottom: 1px solid #334155;">
-                    <td style="padding: 10px 12px; font-weight: 600; color: #93c5fd;">02. Encuesta / Cuestionario</td>
-                    <td style="padding: 10px 12px; color: #cbd5e1;">"El 85% de los aprendices ingresa con más de un equipo tecnológico (portátil + tablet + herramientas)."</td>
-                    <td style="padding: 10px 12px; color: #86efac;"><strong>RF-02:</strong> El sistema debe permitir registrar múltiples dispositivos serializados asociados a una misma persona en un único registro de ingreso.</td>
+                    <td style="padding: 10px; font-weight: 600; color: #93c5fd;">02. Cuestionario Masivo<br><small style="color:#94a3b8">Formulario Likert</small></td>
+                    <td style="padding: 10px; color: #cbd5e1;">"El 85% de los aprendices ingresa con 2 o más dispositivos y el 90% llega entre 6:45 AM y 7:15 AM."</td>
+                    <td style="padding: 10px; color: #86efac;"><strong>RF-02:</strong> Registrar múltiples seriales de equipos asociados a una misma persona en una sola transacción.</td>
+                    <td style="padding: 10px; color: #e9d5ff;"><strong>RNF-02 (Rendimiento):</strong> Con 150 solicitudes concurrentes, el 95 % debe responder en menos de 2 segundos.</td>
                   </tr>
                   <tr style="border-bottom: 1px solid #334155;">
-                    <td style="padding: 10px 12px; font-weight: 600; color: #93c5fd;">03. Observación Directa</td>
-                    <td style="padding: 10px 12px; color: #cbd5e1;">"Dictar el serial de 15 dígitos genera cuellos de botella de hasta 4 minutos por visitante a las 7:00 AM."</td>
-                    <td style="padding: 10px 12px; color: #86efac;"><strong>RF-03:</strong> El sistema debe incorporar escaneo de Código QR dinámico o código de barras para validar la identidad y seriales en menos de 5 segundos.</td>
+                    <td style="padding: 10px; font-weight: 600; color: #93c5fd;">03. Observación Directa<br><small style="color:#94a3b8">Ficha de Tiempos</small></td>
+                    <td style="padding: 10px; color: #cbd5e1;">"Dictar el serial de 15 dígitos genera cuellos de botella de hasta 4 minutos por visitante a las 7:00 AM."</td>
+                    <td style="padding: 10px; color: #86efac;"><strong>RF-03:</strong> Incorporar lectura de Código QR dinámico o código de barras desde el dispositivo móvil.</td>
+                    <td style="padding: 10px; color: #e9d5ff;"><strong>RNF-03 (Rendimiento):</strong> El 95 % de las lecturas y confirmaciones debe completarse en menos de 3 segundos.</td>
                   </tr>
                   <tr style="border-bottom: 1px solid #334155;">
-                    <td style="padding: 10px 12px; font-weight: 600; color: #93c5fd;">04. Análisis Documental</td>
-                    <td style="padding: 10px 12px; color: #cbd5e1;">"La planilla en papel incluye campos obligatorios: Fecha, Hora, Nombres, Cédula, Serial del Equipo y Firma."</td>
-                    <td style="padding: 10px 12px; color: #86efac;"><strong>RF-04:</strong> El sistema debe validar que los campos de identificación personal y serial sean obligatorios antes de permitir guardar el registro.</td>
+                    <td style="padding: 10px; font-weight: 600; color: #93c5fd;">04. Análisis Documental<br><small style="color:#94a3b8">Auditoría de Minuta</small></td>
+                    <td style="padding: 10px; color: #cbd5e1;">"Falta de correo, teléfono y registro previo del estado físico del equipo en la hoja de papel."</td>
+                    <td style="padding: 10px; color: #86efac;"><strong>RF-04:</strong> Exigir datos de contacto obligatorios y permitir adjuntar foto del estado físico del equipo.</td>
+                    <td style="padding: 10px; color: #e9d5ff;"><strong>RNF-04 (Eficiencia):</strong> Cada imagen almacenada debe usar formato WebP y no superar 200 KB.</td>
                   </tr>
                   <tr>
-                    <td style="padding: 10px 12px; font-weight: 600; color: #93c5fd;">05. Taller JAD (Consenso)</td>
-                    <td style="padding: 10px 12px; color: #cbd5e1;">"Seguridad requiere foto del visitante, pero Instructores requieren rapidez. Acordaron foto sólo en la primera visita."</td>
-                    <td style="padding: 10px 12px; color: #86efac;"><strong>RF-05:</strong> El sistema debe solicitar captura fotográfica por cámara únicamente cuando el usuario no registre historial previo en la base de datos.</td>
+                    <td style="padding: 10px; font-weight: 600; color: #93c5fd;">05. Taller JAD<br><small style="color:#94a3b8">Matriz de Consenso</small></td>
+                    <td style="padding: 10px; color: #cbd5e1;">"Seguridad exige foto del visitante, pero Instructores rapidez. Acordaron foto sólo en la primera visita."</td>
+                    <td style="padding: 10px; color: #86efac;"><strong>RF-05:</strong> Validar el historial del visitante y solicitar captura de foto únicamente en la primera visita.</td>
+                    <td style="padding: 10px; color: #e9d5ff;"><strong>RNF-05 (Disponibilidad):</strong> La base de datos de historial de visitantes debe operar con 99.9% de uptime garantizado.</td>
                   </tr>
                 </tbody>
               </table>
@@ -503,6 +569,372 @@
               <div class="observation-row" role="row"><strong role="cell">Resultado</strong><span role="cell">¿Cómo se reconoce que terminó?</span><span role="cell">Solicitud caracterizada</span></div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section class="instrument-lab section-light" id="instrumentos" aria-labelledby="instrument-lab-title">
+        <div class="container">
+          <div class="section-heading instrument-lab-heading">
+            <div>
+              <p class="eyebrow">Laboratorio de transferencia</p>
+              <h2 id="instrument-lab-title">Mira el ejemplo. Luego aplícalo a tu proyecto.</h2>
+            </div>
+            <p>Cada instrumento muestra un uso resuelto del caso ficticio “Control de ingreso de equipos” y una plantilla lista para adaptar. La información de tu proyecto no sale del navegador.</p>
+          </div>
+
+          <ol class="transfer-route" aria-label="Ruta para aplicar y analizar los instrumentos">
+            <li><span>1</span><strong>Observa</strong><small>Revisa el ejemplo diligenciado.</small></li>
+            <li><span>2</span><strong>Adapta</strong><small>Copia la plantilla, no las respuestas.</small></li>
+            <li><span>3</span><strong>Aplica</strong><small>Recolecta evidencia con autorización.</small></li>
+            <li><span>4</span><strong>Analiza</strong><small>Depura, codifica y agrupa patrones.</small></li>
+            <li><span>5</span><strong>Contrasta</strong><small>Triangula fuentes y resuelve diferencias.</small></li>
+            <li><span>6</span><strong>Transfiere</strong><small>Lleva hallazgos validados a la Guía 2.</small></li>
+          </ol>
+
+          <section class="sena-cycle" aria-labelledby="g1-sena-cycle-title">
+            <div class="sena-cycle-heading"><p class="eyebrow">Secuencia didáctica SENA</p><h3 id="g1-sena-cycle-title">Aprender haciendo sobre el proyecto formativo</h3></div>
+            <ol>
+              <li><span>Reflexión</span><strong>¿Qué riesgo tiene programar con supuestos?</strong><small>Evidencia: lista de hechos, dudas y supuestos.</small></li>
+              <li><span>Contextualización</span><strong>Compara cuándo usar cada técnica.</strong><small>Evidencia: selección razonada e instrumento adaptado.</small></li>
+              <li><span>Apropiación</span><strong>Aplica, registra y triangula.</strong><small>Evidencia: registros de campo y matriz de hallazgos.</small></li>
+              <li><span>Transferencia</span><strong>Analiza un proceso real autorizado.</strong><small>Producto: dossier con SIPOC, AS-IS y requisitos candidatos.</small></li>
+            </ol>
+          </section>
+
+          <aside class="case-brief" aria-label="Caso demostrativo ficticio">
+            <div>
+              <span class="case-code">CASO DEMOSTRATIVO</span>
+              <h3>Control de ingreso de equipos al centro de formación</h3>
+              <p>En la hora pico se forman filas porque el guarda registra a mano los datos del visitante y de cada equipo. El equipo ADSO necesita entender actores, excepciones, reglas y niveles de servicio antes de proponer software.</p>
+            </div>
+            <p class="case-warning"><strong>Importante:</strong> los nombres y resultados son ficticios. En un proyecto real, solicita consentimiento y evita registrar datos personales que no sean necesarios.</p>
+          </aside>
+
+          <section class="analysis-workshop" aria-labelledby="analysis-workshop-title">
+            <div class="analysis-workshop-heading">
+              <div><p class="eyebrow">Instrumento de análisis</p><h3 id="analysis-workshop-title">Recolectar no basta: convierte registros en hallazgos validados</h3></div>
+              <p>Analizar no es copiar respuestas. Es limpiar los registros, asignar códigos, agrupar patrones, contrastar fuentes y separar hechos, interpretaciones, dudas y decisiones.</p>
+            </div>
+
+            <ol class="analysis-steps" aria-label="Pasos para analizar la información recolectada">
+              <li><span>01</span><strong>Depurar</strong><small>Quita duplicados y datos innecesarios; conserva fuente y fecha.</small></li>
+              <li><span>02</span><strong>Codificar</strong><small>Asigna una etiqueta breve a cada idea relevante.</small></li>
+              <li><span>03</span><strong>Agrupar</strong><small>Reúne códigos en actores, datos, reglas, eventos, problemas y calidad.</small></li>
+              <li><span>04</span><strong>Triangular</strong><small>Busca coincidencias y contradicciones entre fuentes.</small></li>
+              <li><span>05</span><strong>Validar</strong><small>Confirma el hallazgo y registra preguntas o decisiones pendientes.</small></li>
+            </ol>
+
+            <div class="analysis-example-grid">
+              <section class="analysis-example" aria-labelledby="analysis-example-title">
+                <p class="instrument-kicker">Ejemplo resuelto</p>
+                <h3 id="analysis-example-title">Matriz de codificación y triangulación</h3>
+                <div class="instrument-table-wrap" role="region" aria-label="Matriz de análisis diligenciada" tabindex="0">
+                  <table class="instrument-table analysis-table">
+                    <thead><tr><th>Registro y fuente</th><th>Código</th><th>Categoría</th><th>Contraste</th><th>Estado</th></tr></thead>
+                    <tbody>
+                      <tr><td>Entrevista: “si no aparece en la lista, llamo al instructor”.</td><td>AUT-EXC</td><td>Regla y excepción</td><td>Coincide con observación.</td><td>Confirmar autoridad.</td></tr>
+                      <tr><td>Observación: tres llamadas tardaron entre 40 y 120 segundos.</td><td>DEM-AUT</td><td>Problema y tiempo</td><td>No existe tiempo objetivo documentado.</td><td>Medir otra franja.</td></tr>
+                      <tr><td>Minuta: no tiene campo de autorizador ni resultado de la llamada.</td><td>TRA-AUT</td><td>Dato y trazabilidad</td><td>Contradice la necesidad declarada de auditoría.</td><td>Llevar a JAD.</td></tr>
+                      <tr><td>JAD: el dueño del proceso exige registrar quién decide, cuándo y con qué resultado.</td><td>DEC-AUT</td><td>Decisión validada</td><td>Concilia las tres fuentes.</td><td>Validado.</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+
+              <section class="analysis-output" aria-labelledby="analysis-output-title">
+                <p class="instrument-kicker">Resultado del análisis</p>
+                <h3 id="analysis-output-title">Paquete que recibe la Guía 2</h3>
+                <dl class="analysis-findings">
+                  <div><dt>Hallazgo validado</dt><dd>La autorización excepcional se realiza por llamada y debe conservar actor, fecha y resultado para que sea trazable.</dd></div>
+                  <div><dt>Actores</dt><dd>Guarda, instructor autorizador y dueño del proceso.</dd></div>
+                  <div><dt>Datos candidatos</dt><dd>Visitante, solicitud, autorizador, fecha, resultado y motivo. Todavía no son tablas.</dd></div>
+                  <div><dt>Regla candidata</dt><dd>Solo un rol autorizado puede aprobar o rechazar una excepción.</dd></div>
+                  <div><dt>Evento</dt><dd>Autorización solicitada, aprobada, rechazada o vencida.</dd></div>
+                  <div><dt>Calidad esperada</dt><dd>Respuesta o alternativa controlada durante la hora pico; la métrica debe acordarse.</dd></div>
+                  <div><dt>Pregunta abierta</dt><dd>¿Cuánto tiempo se conserva la evidencia y quién puede consultarla?</dd></div>
+                </dl>
+              </section>
+            </div>
+
+            <section class="analysis-template" aria-labelledby="analysis-template-title">
+              <div><p class="instrument-kicker">Plantilla reutilizable</p><h3 id="analysis-template-title">Matriz para analizar la información de tu proyecto</h3><p>Completa una fila por idea relevante. Un dato sin fuente es una opinión; una contradicción sin decisión sigue siendo una pregunta.</p></div>
+              <div>
+                <pre><code id="g1-template-analysis">ID DEL REGISTRO: [E-ENT/E-OBS/E-DOC/E-JAD]
+FUENTE Y FECHA: [rol o artefacto autorizado]
+DATO BRUTO: [frase, medida o hecho observable]
+CÓDIGO: [etiqueta breve]
+CATEGORÍA: [actor/dato/regla/evento/problema/calidad]
+COINCIDE CON: [IDs de otras fuentes]
+CONTRADICE A: [IDs y explicación]
+INTERPRETACIÓN DEL EQUIPO: [qué podría significar]
+PREGUNTA DE VALIDACIÓN: [qué falta confirmar]
+DECISIÓN Y RESPONSABLE: [acuerdo, rol y fecha]
+ESTADO: [pendiente/contrastado/validado/descartado]
+
+HALLAZGO CONSOLIDADO: [hecho preciso y trazable]
+ACTORES: [roles]
+DATOS CANDIDATOS: [conceptos del dominio, todavía no tablas]
+REGLAS CANDIDATAS: [condiciones]
+EVENTOS: [algo que ocurre y debe registrarse]
+CALIDADES ESPERADAS: [tiempo, seguridad, disponibilidad, accesibilidad]
+PREGUNTAS ABIERTAS: [lista]
+FUENTES RELACIONADAS: [IDs]</code></pre>
+                <div class="copy-row"><button class="button button-secondary button-small" type="button" data-copy-target="g1-template-analysis">Copiar matriz de análisis</button><span class="copy-status" role="status" aria-live="polite"></span></div>
+              </div>
+            </section>
+          </section>
+
+          <div class="instrument-example-list">
+            <details class="instrument-example" open>
+              <summary>
+                <span class="instrument-index">I-01</span>
+                <span><strong>Guion de entrevista semiestructurada</strong><small>Úsalo para comprender decisiones, excepciones y lenguaje del actor.</small></span>
+                <span class="details-action">Ver ejemplo y plantilla</span>
+              </summary>
+              <div class="instrument-example-body">
+                <section class="resolved-example" aria-labelledby="interview-example-title">
+                  <p class="instrument-kicker">Ejemplo diligenciado</p>
+                  <h3 id="interview-example-title">Entrevista al guarda de acceso</h3>
+                  <dl class="instrument-facts">
+                    <div><dt>Objetivo</dt><dd>Descubrir el flujo normal y las excepciones cuando un visitante no tiene cita.</dd></div>
+                    <div><dt>Pregunta</dt><dd>¿Qué hace desde que llega el visitante hasta que autoriza su entrada?</dd></div>
+                    <div><dt>Respuesta</dt><dd>“Reviso la cédula, busco al instructor en una lista y, si no aparece, lo llamo por teléfono”.</dd></div>
+                    <div><dt>Hallazgo</dt><dd>La autorización excepcional depende de una llamada y no deja evidencia trazable.</dd></div>
+                    <div><dt>Pregunta por validar</dt><dd>¿Quién puede autorizar y qué información debe quedar registrada?</dd></div>
+                  </dl>
+                </section>
+                <section class="template-panel" aria-labelledby="interview-template-title">
+                  <p class="instrument-kicker">Plantilla reutilizable</p>
+                  <h3 id="interview-template-title">Guion mínimo</h3>
+                  <pre><code id="g1-template-interview">PROYECTO: [nombre]
+ACTOR ENTREVISTADO: [rol, no dato sensible]
+OBJETIVO: [decisión que necesitas comprender]
+
+APERTURA
+- Explicar propósito, duración y uso de la información.
+- Solicitar consentimiento para tomar notas.
+
+PREGUNTAS
+1. ¿Cómo inicia y termina este proceso?
+2. ¿Qué pasos realiza normalmente?
+3. ¿Qué cambia cuando algo falla o falta información?
+4. ¿Quién toma decisiones y con qué regla?
+5. ¿Qué tiempo de espera considera aceptable y por qué?
+
+CIERRE
+- Resumir lo comprendido y pedir correcciones.
+- Acordar cómo se validarán los hallazgos.</code></pre>
+                  <div class="copy-row"><button class="button button-ghost button-small" type="button" data-copy-target="g1-template-interview">Copiar plantilla</button><span class="copy-status" role="status" aria-live="polite"></span></div>
+                </section>
+              </div>
+            </details>
+
+            <details class="instrument-example">
+              <summary>
+                <span class="instrument-index">I-02</span>
+                <span><strong>Cuestionario de caracterización</strong><small>Úsalo para medir frecuencia, volumen o percepción en una población amplia.</small></span>
+                <span class="details-action">Ver ejemplo y plantilla</span>
+              </summary>
+              <div class="instrument-example-body">
+                <section class="resolved-example" aria-labelledby="survey-example-title">
+                  <p class="instrument-kicker">Ejemplo diligenciado</p>
+                  <h3 id="survey-example-title">Encuesta breve a 200 usuarios</h3>
+                  <div class="instrument-table-wrap" role="region" aria-label="Resultados del cuestionario" tabindex="0">
+                    <table class="instrument-table">
+                      <thead><tr><th>Pregunta</th><th>Resultado</th><th>Interpretación responsable</th></tr></thead>
+                      <tbody>
+                        <tr><td>¿Cuántos equipos ingresa?</td><td>85 % ingresa dos o más.</td><td>Se requiere validar la relación persona–equipos; no define todavía la pantalla.</td></tr>
+                        <tr><td>¿En qué horario llega?</td><td>90 % entre 6:45 y 7:15.</td><td>Existe una ventana de concurrencia que debe medirse en pruebas.</td></tr>
+                        <tr><td>Tiempo actual percibido</td><td>4,2 sobre 5 como “muy lento”.</td><td>La percepción debe contrastarse con cronometraje directo.</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </section>
+                <section class="template-panel" aria-labelledby="survey-template-title">
+                  <p class="instrument-kicker">Plantilla reutilizable</p>
+                  <h3 id="survey-template-title">Ficha del cuestionario</h3>
+                  <pre><code id="g1-template-survey">OBJETIVO: [qué variable necesitas medir]
+POBLACIÓN: [quiénes pueden responder]
+MUESTRA Y JUSTIFICACIÓN: [cantidad y criterio]
+CANAL Y DURACIÓN: [medio, máximo 3 minutos]
+
+PREGUNTAS
+1. Rol o relación con el proceso: [opción única]
+2. Frecuencia del evento: [escala ordinal]
+3. Cantidad o volumen: [rango numérico]
+4. Percepción: [Likert 1 a 5 con extremos definidos]
+5. Comentario opcional: [respuesta abierta breve]
+
+ANÁLISIS
+- Porcentaje o mediana relevante: [resultado]
+- Sesgo o limitación de la muestra: [nota]
+- Fuente con la que se contrastará: [entrevista/observación/documento]</code></pre>
+                  <div class="copy-row"><button class="button button-ghost button-small" type="button" data-copy-target="g1-template-survey">Copiar plantilla</button><span class="copy-status" role="status" aria-live="polite"></span></div>
+                </section>
+              </div>
+            </details>
+
+            <details class="instrument-example">
+              <summary>
+                <span class="instrument-index">I-03</span>
+                <span><strong>Ficha de observación y tiempos</strong><small>Úsala para registrar el trabajo real sin interrumpirlo.</small></span>
+                <span class="details-action">Ver ejemplo y plantilla</span>
+              </summary>
+              <div class="instrument-example-body">
+                <section class="resolved-example" aria-labelledby="observation-example-title">
+                  <p class="instrument-kicker">Ejemplo diligenciado</p>
+                  <h3 id="observation-example-title">Treinta minutos en la garita</h3>
+                  <div class="instrument-table-wrap" role="region" aria-label="Ficha de observación diligenciada" tabindex="0">
+                    <table class="instrument-table">
+                      <thead><tr><th>Actor y acción</th><th>Tiempo</th><th>Evidencia observable</th></tr></thead>
+                      <tbody>
+                        <tr><td>Visitante dicta cédula y serial.</td><td>45 s</td><td>Dos repeticiones por ruido ambiental.</td></tr>
+                        <tr><td>Guarda busca una casilla libre.</td><td>130 s</td><td>Revisa cuatro páginas antes de escribir.</td></tr>
+                        <tr><td>Visitante firma y recibe autorización.</td><td>75 s</td><td>La fila aumenta de 4 a 10 personas.</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <p class="evidence-conclusion"><strong>Conclusión provisional:</strong> el ciclo observado toma 250 segundos; debe repetirse en más franjas antes de fijar una meta.</p>
+                </section>
+                <section class="template-panel" aria-labelledby="observation-template-title">
+                  <p class="instrument-kicker">Plantilla reutilizable</p>
+                  <h3 id="observation-template-title">Registro de campo</h3>
+                  <pre><code id="g1-template-observation">PROCESO Y UBICACIÓN: [descripción]
+FECHA / FRANJA: [momento autorizado]
+OBSERVADOR: [nombre o código]
+OBJETIVO: [qué comportamiento o tiempo observar]
+
+REGISTRO POR EVENTO
+[hora] | [actor] | [acción observable] | [duración] | [interrupción] | [evidencia]
+
+CIERRE
+- Patrón repetido: [hecho]
+- Excepción observada: [hecho]
+- Pregunta pendiente: [duda]
+- Condición que pudo alterar la muestra: [limitación]
+- Fuente para contrastar: [persona o documento]</code></pre>
+                  <div class="copy-row"><button class="button button-ghost button-small" type="button" data-copy-target="g1-template-observation">Copiar plantilla</button><span class="copy-status" role="status" aria-live="polite"></span></div>
+                </section>
+              </div>
+            </details>
+
+            <details class="instrument-example">
+              <summary>
+                <span class="instrument-index">I-04</span>
+                <span><strong>Matriz de análisis documental</strong><small>Úsala para descubrir campos, reglas, responsables y vacíos en artefactos existentes.</small></span>
+                <span class="details-action">Ver ejemplo y plantilla</span>
+              </summary>
+              <div class="instrument-example-body">
+                <section class="resolved-example" aria-labelledby="document-example-title">
+                  <p class="instrument-kicker">Ejemplo diligenciado</p>
+                  <h3 id="document-example-title">Auditoría de la minuta física</h3>
+                  <div class="instrument-table-wrap" role="region" aria-label="Matriz documental diligenciada" tabindex="0">
+                    <table class="instrument-table">
+                      <thead><tr><th>Campo o regla</th><th>Estado</th><th>Decisión pendiente</th></tr></thead>
+                      <tbody>
+                        <tr><td>Cédula y serial</td><td>Obligatorios, escritos a mano.</td><td>Confirmar longitud, unicidad y tratamiento de datos.</td></tr>
+                        <tr><td>Firma</td><td>Sin responsable explícito de custodia.</td><td>Validar si la firma es necesaria en el proceso digital.</td></tr>
+                        <tr><td>Autorizador</td><td>No existe campo.</td><td>Agregar trazabilidad solo si el dueño del proceso lo aprueba.</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </section>
+                <section class="template-panel" aria-labelledby="document-template-title">
+                  <p class="instrument-kicker">Plantilla reutilizable</p>
+                  <h3 id="document-template-title">Inventario de artefactos</h3>
+                  <pre><code id="g1-template-document">DOCUMENTO O ARTEFACTO: [nombre y versión]
+RESPONSABLE: [rol]
+PROPÓSITO: [para qué se usa]
+VIGENCIA: [fecha o estado]
+
+MATRIZ
+[campo/regla] | [tipo/formato] | [obligatorio] | [quién lo usa] | [vacío o contradicción]
+
+TRAZABILIDAD
+- Regla confirmada por: [fuente]
+- Dato sensible identificado: [sí/no y tratamiento]
+- Duda que requiere validación: [pregunta]
+- Artefacto relacionado: [nombre]
+- Decisión registrada: [acuerdo y fecha]</code></pre>
+                  <div class="copy-row"><button class="button button-ghost button-small" type="button" data-copy-target="g1-template-document">Copiar plantilla</button><span class="copy-status" role="status" aria-live="polite"></span></div>
+                </section>
+              </div>
+            </details>
+
+            <details class="instrument-example">
+              <summary>
+                <span class="instrument-index">I-05</span>
+                <span><strong>Matriz de consenso para taller JAD</strong><small>Úsala cuando varias áreas deben acordar alcance, reglas o prioridades.</small></span>
+                <span class="details-action">Ver ejemplo y plantilla</span>
+              </summary>
+              <div class="instrument-example-body">
+                <section class="resolved-example" aria-labelledby="jad-example-title">
+                  <p class="instrument-kicker">Ejemplo diligenciado</p>
+                  <h3 id="jad-example-title">Acuerdo entre seguridad, instructores y TI</h3>
+                  <dl class="instrument-facts">
+                    <div><dt>Conflicto</dt><dd>Seguridad solicita fotografía en cada ingreso; instructores necesitan reducir la fila.</dd></div>
+                    <div><dt>Evidencia usada</dt><dd>Tiempo observado, cantidad de reincidentes y política vigente de tratamiento de datos.</dd></div>
+                    <div><dt>Acuerdo</dt><dd>Evaluar fotografía solo en el primer registro, sujeta a autorización y política aprobada.</dd></div>
+                    <div><dt>Responsable</dt><dd>Dueño del proceso valida la regla; TI estima viabilidad; protección de datos revisa el tratamiento.</dd></div>
+                    <div><dt>Pendiente</dt><dd>Definir conservación, acceso y eliminación de la imagen antes de aprobar el requisito.</dd></div>
+                  </dl>
+                </section>
+                <section class="template-panel" aria-labelledby="jad-template-title">
+                  <p class="instrument-kicker">Plantilla reutilizable</p>
+                  <h3 id="jad-template-title">Acta de consenso</h3>
+                  <pre><code id="g1-template-jad">OBJETIVO DEL TALLER: [decisión concreta]
+PARTICIPANTES Y ROL DE DECISIÓN: [lista]
+FACILITADOR / RELATOR: [responsables]
+REGLAS: escuchar, usar evidencia, registrar desacuerdos.
+
+MATRIZ DE DECISIÓN
+[tema] | [posición A] | [posición B] | [evidencia] | [acuerdo] | [responsable] | [fecha]
+
+CIERRE
+- Dentro del alcance: [lista]
+- Fuera del alcance: [lista]
+- Supuestos por validar: [lista]
+- Riesgos o datos sensibles: [lista]
+- Próxima revisión: [fecha y responsable]</code></pre>
+                  <div class="copy-row"><button class="button button-ghost button-small" type="button" data-copy-target="g1-template-jad">Copiar plantilla</button><span class="copy-status" role="status" aria-live="polite"></span></div>
+                </section>
+              </div>
+            </details>
+          </div>
+
+          <section class="project-workbench" aria-labelledby="collection-workbench-title">
+            <div class="workbench-copy">
+              <p class="eyebrow">Ahora con tu proyecto</p>
+              <h2 id="collection-workbench-title">Genera un plan inicial de recolección</h2>
+              <p>Completa los campos con información no sensible. El resultado es un borrador para revisar con tu equipo e instructor, no un instrumento aprobado automáticamente.</p>
+              <ul class="workbench-checks">
+                <li>Un objetivo responde a una decisión concreta.</li>
+                <li>Una técnica se elige por el tipo de evidencia, no por comodidad.</li>
+                <li>Un hallazgo se valida antes de convertirlo en requisito.</li>
+              </ul>
+            </div>
+            <form class="workbench-form" id="collection-workbench" novalidate>
+              <div class="form-grid">
+                <label><span>Nombre del proyecto</span><input id="collection-project" name="project" type="text" autocomplete="off" required placeholder="Ejemplo: Gestión de préstamos de herramientas"></label>
+                <label><span>Proceso o problema</span><input id="collection-problem" name="problem" type="text" autocomplete="off" required placeholder="Ejemplo: Demoras y pérdidas en la entrega"></label>
+                <label><span>Fuente o actor</span><input id="collection-source" name="source" type="text" autocomplete="off" required placeholder="Ejemplo: encargado del almacén"></label>
+                <label><span>Técnica principal</span><select id="collection-technique" name="technique" required><option value="">Selecciona una técnica</option><option value="interview">Entrevista semiestructurada</option><option value="survey">Cuestionario</option><option value="observation">Observación directa</option><option value="document">Análisis documental</option><option value="jad">Taller JAD</option></select></label>
+                <label class="form-span"><span>Objetivo de la recolección</span><textarea id="collection-objective" name="objective" rows="3" required placeholder="Ejemplo: comprender cómo se aprueba, entrega y devuelve una herramienta"></textarea></label>
+                <label class="form-span"><span>Evidencia que esperas obtener</span><textarea id="collection-evidence" name="evidence" rows="3" required placeholder="Ejemplo: pasos reales, tiempos, excepciones y documento que respalda la entrega"></textarea></label>
+              </div>
+              <div class="workbench-actions">
+                <button class="button button-primary" type="submit">Generar mi plan</button>
+                <button class="button button-secondary" type="reset">Limpiar</button>
+                <span id="collection-form-status" class="form-status" role="alert" aria-live="assertive"></span>
+              </div>
+            </form>
+            <article class="generated-artifact" id="collection-result" aria-labelledby="collection-result-title" tabindex="-1" hidden>
+              <div class="generated-heading"><div><p class="instrument-kicker">Borrador generado</p><h3 id="collection-result-title">Plan de recolección para revisar</h3></div><span class="generated-state">Listo para adaptar</span></div>
+              <pre><code id="collection-result-text"></code></pre>
+              <div class="copy-row"><button class="button button-secondary button-small" type="button" data-copy-target="collection-result-text">Copiar plan</button><span class="copy-status" role="status" aria-live="polite"></span></div>
+              <p class="transfer-note"><strong>Siguiente paso:</strong> aplica el instrumento, contrasta los hallazgos y lleva únicamente los hallazgos validados a la Guía 2.</p>
+            </article>
+          </section>
         </div>
       </section>
 
@@ -755,7 +1187,7 @@
             <p class="eyebrow">Formación SENA por Proyectos</p>
             <h2 id="completion-title">Producto Entregable del Proyecto Formativo</h2>
             <p style="margin-bottom: 1.5rem; color: var(--text-secondary, #475569); line-height: 1.6;">
-              En el SENA la formación se fundamenta en el <strong>Aprendizaje Basado en Proyectos (ABP)</strong>. A través del recorrido realizado en esta guía web (desde los conceptos de caracterización de procesos hasta la resolución interactiva del simulador SIPOC), has obtenido los insumos requeridos para estructurar el producto tangible de la primera fase de tu <strong>Proyecto Formativo Core</strong>.
+              En el SENA la formación se fundamenta en el <strong>Aprendizaje Basado en Proyectos (ABP)</strong>. A través del recorrido realizado en esta guía web —recolección, análisis, triangulación y caracterización con SIPOC— has obtenido los insumos para sustentar la primera fase de tu <strong>Proyecto Formativo Core</strong> y continuar hacia la especificación del software.
             </p>
             
             <div style="background-color: var(--surface-alt, #f8f9fa); padding: 1.75rem; border-radius: 8px; border: 1px solid var(--border-color, #e2e8f0); margin-bottom: 1.5rem; width: 100%;">
@@ -764,10 +1196,11 @@
                 <h3 style="margin: 0; font-size: 1.15rem; color: var(--text-primary, #1e293b);">Insumos Logrados en el Recorrido Web</h3>
               </div>
               <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; color: var(--text-secondary, #475569); line-height: 1.6;">
-                <li><strong>Estación 1 (Conceptos):</strong> Identificación de actores, eventos iniciales, transformaciones y resultados.</li>
-                <li><strong>Estación 2 (Anatomía del Proceso):</strong> Caracterización del caso de estudio y matriz de observación.</li>
-                <li><strong>Estación 3 (Simulador Interactivo):</strong> Clasificación correcta de las 12 tarjetas del caso (10 en los 5 componentes SIPOC y 2 fuera del alcance), con precisión, errores y código de verificación.</li>
-                <li><strong>Estación 4 (Autoevaluación):</strong> Verificación de conceptos clave de análisis del negocio.</li>
+                <li><strong>Estación 1 (Recolección):</strong> Selección y adaptación de entrevistas, cuestionarios, observación, análisis documental y JAD.</li>
+                <li><strong>Estación 2 (Análisis):</strong> Depuración, codificación, categorización, triangulación y validación de hallazgos.</li>
+                <li><strong>Estación 3 (Proceso):</strong> Identificación de actores, datos, reglas, eventos, transformaciones y resultados.</li>
+                <li><strong>Estación 4 (Simulador SIPOC):</strong> Clasificación de las 12 tarjetas, con precisión, errores y código de verificación.</li>
+                <li><strong>Estación 5 (Autoevaluación):</strong> Verificación de conceptos clave de análisis del negocio.</li>
               </ul>
 
               <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
@@ -777,8 +1210,11 @@
               <p style="margin-bottom: 0.5rem; color: var(--text-secondary, #475569);">Consolida un documento PDF institucional con los siguientes apartados de tu Proyecto Formativo:</p>
               <ol style="margin-left: 1.5rem; margin-bottom: 1.5rem; color: var(--text-secondary, #475569); line-height: 1.6;">
                 <li style="margin-bottom: 0.35rem;"><strong>Portada Institucional SENA:</strong> Nombre del Proyecto Formativo, Nombres de los Aprendices, Ficha y Centro de Formación.</li>
+                <li style="margin-bottom: 0.35rem;"><strong>Plan e Instrumentos de Recolección:</strong> Objetivo, fuentes, técnica, instrumentos adaptados, consentimiento y evidencia obtenida.</li>
+                <li style="margin-bottom: 0.35rem;"><strong>Matriz de Análisis y Triangulación:</strong> Dato bruto, código, categoría, coincidencias, contradicciones, decisión, responsable y estado.</li>
                 <li style="margin-bottom: 0.35rem;"><strong>Caracterización del Proceso:</strong> Nombre, objetivo y alcance del proceso clave de software estudiado.</li>
                 <li style="margin-bottom: 0.35rem;"><strong>Matriz SIPOC Integrada:</strong> Tabla detallada de Proveedores (Supplier), Entradas (Input), Subprocesos/Pasos (Process), Salidas (Output) y Clientes (Customer).</li>
+                <li style="margin-bottom: 0.35rem;"><strong>Paquete para la Guía 2:</strong> Hallazgos validados, actores, datos, reglas y eventos candidatos, calidades esperadas, preguntas abiertas y fuentes.</li>
                 <li style="margin-bottom: 0.35rem;"><strong>Evidencia del Recorrido Web:</strong> Captura de pantalla legible del Simulador SIPOC completado exitosamente (12/12, con precisión y código de verificación visibles) y resultado del Cuestionario de comprobación.</li>
                 <li style="margin-bottom: 0.35rem;"><strong>Conclusiones de Modelado:</strong> Breve análisis sobre cómo esta caracterización previene ambigüedades antes de iniciar la especificación técnica.</li>
               </ol>
@@ -804,6 +1240,8 @@
             <details class="glossary-item"><summary>Proceso</summary><p>Conjunto de actividades relacionadas que transforma una entrada en una salida para un cliente.</p></details>
             <details class="glossary-item"><summary>Requisito</summary><p>Necesidad o condición que el software debe satisfacer para aportar valor.</p></details>
             <details class="glossary-item"><summary>Actor</summary><p>Persona, área o sistema que participa, entrega información o recibe resultados.</p></details>
+            <details class="glossary-item"><summary>Hallazgo</summary><p>Conclusión sustentada en registros trazables y contrastada con una o más fuentes; no equivale todavía a un requisito aprobado.</p></details>
+            <details class="glossary-item"><summary>Regla de negocio</summary><p>Condición o política del dominio que limita decisiones y debe validarse con el responsable del proceso.</p></details>
             <details class="glossary-item"><summary>SIPOC</summary><p>Herramienta de alto nivel para identificar Supplier, Input, Process, Output y Customer.</p></details>
           </div>
         </div>
@@ -813,7 +1251,7 @@
           <div>
             <span style="color: #60a5fa; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Siguiente Estación en tu Ruta Formativa ADSO</span>
             <h4 style="color: #f8fafc; font-size: 1.1rem; margin-top: 2px; margin-bottom: 4px;">Guía 2 · Ingeniería de Contexto (Requisitos Funcionales y Arquitectura)</h4>
-            <p style="color: #cbd5e1; font-size: 0.825rem; margin: 0;">Transforma los hallazgos de recolección en Requisitos Funcionales (RF), priorización MoSCoW y pruebas BDD.</p>
+            <p style="color: #cbd5e1; font-size: 0.825rem; margin: 0;">Transforma hallazgos validados en RF, RNF, historias, BDD y un lienzo inicial de datos y componentes.</p>
           </div>
           <a class="button button-primary" href="../guia%202%20Ingenier%C3%ADa%20de%20Contexto%20%28Requisitos%20Funcionales%20y%20Arquitectura%29/index.html" style="white-space: nowrap; text-decoration: none;">Avanzar a Guía 2 <span aria-hidden="true">→</span></a>
         </div>

@@ -38,7 +38,7 @@
   }
 
   function setupActiveNavigation() {
-    const sections = ["inicio", "descubrimiento", "conceptos", "proceso", "simulador", "validacion"]
+    const sections = ["inicio", "descubrimiento", "instrumentos", "conceptos", "proceso", "simulador", "validacion"]
       .map((id) => document.getElementById(id))
       .filter(Boolean);
     const links = [...document.querySelectorAll(".nav-link")];

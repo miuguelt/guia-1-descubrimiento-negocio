@@ -1,0 +1,109 @@
+{
+  "standard": {
+    "id": "devbrain.educational-guide",
+    "version": "2.0.0"
+  },
+  "guide": {
+    "id": "adso-requisitos-guia-01-web-2026",
+    "title": "Guía 01 web - Descubrimiento del negocio, recolección de información y SIPOC",
+    "format": "html",
+    "language": "es-CO",
+    "version": "2.2",
+    "sourceDocument": "index.html"
+  },
+  "curricularAlignment": {
+    "program": {
+      "name": "Análisis y Desarrollo de Software",
+      "code": "228118",
+      "version": "1"
+    },
+    "competency": {
+      "code": "NO_INFORMADO_EN_LA_FUENTE",
+      "name": "Especificación de requisitos del software",
+      "sourceStatus": "El documento base no informa el código de la competencia; no se inventa."
+    },
+    "learningResults": [
+      "Caracterizar los procesos de la organización de acuerdo con el software a construir.",
+      "Recolectar información del software a construir de acuerdo con las necesidades del cliente (articulación)."
+    ],
+    "projectPhase": "Análisis",
+    "projectActivity": "Caracterizar los procesos y el contexto del sistema de información."
+  },
+  "project": {
+    "challenge": "Comprender y documentar un proceso real antes de proponer pantallas, bases de datos o código, triangulando lo que las personas dicen, hacen y registran.",
+    "finalProduct": "Dossier de caracterización con plan de recolección, instrumentos aplicados, matriz de análisis y triangulación, SIPOC, flujo AS-IS, hallazgos validados y candidatos de actores, datos, reglas, eventos y requisitos.",
+    "checkpoints": [
+      {
+        "id": "G1-C1",
+        "evidence": "Plan de recolección e instrumentos seleccionados.",
+        "criterion": "Selecciona técnicas coherentes con el objetivo, la fuente y el tipo de evidencia."
+      },
+      {
+        "id": "G1-C2",
+        "evidence": "Instrumentos aplicados y registros de campo.",
+        "criterion": "Registra datos verificables, respeta el consentimiento y evita preguntas inductivas."
+      },
+      {
+        "id": "G1-C3",
+        "evidence": "Matriz de análisis y triangulación, vocabulario del dominio y dossier final.",
+        "criterion": "Cada hallazgo diferencia dato bruto, código, categoría, fuente, discrepancia, decisión y candidatos de datos, reglas, eventos y requisitos."
+      }
+    ]
+  },
+  "learningSequence": [
+    {
+      "phase": "reflection",
+      "activity": "Analizar el riesgo de automatizar un proceso que todavía no se comprende.",
+      "hours": 2,
+      "increment": "Matriz de hechos, dudas y supuestos."
+    },
+    {
+      "phase": "contextualization",
+      "activity": "Comparar técnicas y estudiar instrumentos diligenciados del caso demostrativo.",
+      "hours": 6,
+      "increment": "Plan e instrumentos de recolección."
+    },
+    {
+      "phase": "appropriation",
+      "activity": "Aplicar, organizar y triangular información para construir SIPOC y flujo AS-IS.",
+      "hours": 10,
+      "increment": "Matriz de triangulación, SIPOC y AS-IS validados."
+    },
+    {
+      "phase": "transfer",
+      "activity": "Transferir el método a un proceso real autorizado y sustentar los hallazgos.",
+      "hours": 6,
+      "increment": "Dossier final incorporable al proyecto formativo."
+    }
+  ],
+  "evidence": {
+    "knowledge": ["Cuestionario razonado sobre técnicas, sesgos, muestreo, ética y triangulación."],
+    "performance": ["Diseño y aplicación de instrumentos; registro y contraste de hallazgos."],
+    "product": ["Dossier con plan, instrumentos, triangulación, SIPOC, AS-IS y control de cambios."]
+  },
+  "assessment": {
+    "criteria": [
+      "Selecciona y combina técnicas según objetivo, actor, acceso y riesgo.",
+      "Formula preguntas neutrales y registra evidencia observable.",
+      "Mantiene trazabilidad desde la fuente hasta el hallazgo y el requisito candidato."
+    ],
+    "instruments": ["Cuestionario de estudio de caso", "Lista de chequeo de desempeño", "Rúbrica analítica del dossier"]
+  },
+  "duration": {
+    "totalHours": 24
+  },
+  "sources": [
+    "Servicio Nacional de Aprendizaje - SENA. Programa ADSO 228118, versión 1.",
+    "Servicio Nacional de Aprendizaje - SENA. Formato GFPI-F-135 V04.",
+    "SENA. Metodología para aplicar el aprendizaje por proyectos, 2023. https://repositorio.sena.edu.co/handle/11404/8544",
+    "ISO/IEC/IEEE 29148:2018. Requirements engineering. https://www.iso.org/standard/72089.html"
+  ],
+  "assumptions": [
+    "Los nombres, datos y resultados son ejemplos ficticios y deben reemplazarse por evidencia autorizada.",
+    "La guía no autoriza capturar datos personales ni grabar participantes sin consentimiento."
+  ],
+  "changeControl": {
+    "date": "2026-08-07",
+    "summary": "Incorporación del análisis estructurado de información como puente entre instrumentos de campo, hallazgos validados y especificación del software."
+  }
+}
